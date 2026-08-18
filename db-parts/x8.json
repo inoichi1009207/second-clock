@@ -1,0 +1,926 @@
+[
+ {
+  "name": "复合维生素B胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完，且不超过原印刷效期；保留瓶内干燥剂",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "服后尿液变亮黄属核黄素正常现象，不必停用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素B族泡腾片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 90,
+  "open_note": "管装泡腾片开封后参考值3个月内用完；每次取片后立即盖紧管盖",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "泡腾片必须完全溶解后饮用，严禁直接吞服或含服",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素B12含片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；见光易分解，须遮光密封",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "长期素食或服二甲双胍者易缺乏，但确诊贫血须就医而非自行补",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "活性叶酸片（5-甲基四氢叶酸钙）",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；受潮见光易分解",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "与普通叶酸不叠加服用，剂量遵医嘱",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "复合维生素片（孕妇型）",
+  "aliases": [
+   "爱乐维"
+  ],
+  "form": "片剂",
+  "open_days": null,
+  "open_note": "铝塑板独立密封，按外盒印刷效期使用，拆板即服",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "已含叶酸与铁，勿再叠加单方叶酸或铁剂，谨防过量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素K2软胶囊（MK-7）",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；软胶囊受热易粘连渗漏",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "服华法林等抗凝药者须先咨询医生，维生素K会削弱药效",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素K2滴剂",
+  "aliases": [],
+  "form": "滴剂",
+  "open_days": 30,
+  "open_note": "多剂量油性滴瓶开封后取保守30天（参考值）；避光密封直立存放",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "油液出现哈喇味或明显浑浊即弃用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素D3维生素K2软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；防潮避热",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "与其他含维生素D的复合制剂同服时须核算总量，避免蓄积中毒",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "烟酰胺胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "烟酰胺一般不引起皮肤潮红，若出现明显潮红须核对是否误买烟酸",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "烟酰胺单核苷酸胶囊",
+  "aliases": [
+   "NMN"
+  ],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；吸湿性强，务必保留干燥剂",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "抗衰功效缺乏充分人体证据，勿以此替代疾病治疗",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素C咀嚼片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；受潮变色即弃",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "长期大剂量（每日超过1克）可能增加肾结石风险",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素A软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；遇光遇热易氧化失效",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "脂溶性易蓄积，孕妇及长期服用者须严格控量并遵医嘱",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "维生素D3软胶囊（成人型）",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光防热",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "大剂量长期服用须定期查血钙，勿自行按万国际单位级加量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "生物素片",
+  "aliases": [
+   "维生素H"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "大剂量生物素会干扰甲状腺功能等化验结果，抽血前须主动告知医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "多种维生素软糖（儿童型）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 90,
+  "open_note": "罐装软糖开封后易吸潮粘连，取保守3个月（参考值）",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "外观口味近似糖果，务必放在儿童拿不到处，谨防过量误食",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "复合维生素矿物质片（女士型）",
+  "aliases": [
+   "善存女士"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "大瓶装开封后参考值6个月内用完，且不超过原印刷效期；保留干燥剂",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "勿与其他单方维生素叠加，谨防脂溶性维生素过量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "复合维生素矿物质片（中老年型）",
+  "aliases": [
+   "善存银片"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "大瓶装开封后参考值6个月内用完，且不超过原印刷效期；保留干燥剂",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "含钙镁成分，与左甲状腺素、喹诺酮类抗生素须间隔至少4小时",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "碳酸钙维D3咀嚼片（儿童型）",
+  "aliases": [
+   "迪巧儿童"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；取药后立即拧紧瓶盖防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "咀嚼后饮水，与铁剂间隔至少4小时",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "柠檬酸钙片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "不依赖胃酸吸收，适合胃酸偏低或服抑酸药人群",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "乳钙软胶囊",
+  "aliases": [
+   "液体乳钙"
+  ],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；受热易粘连渗漏",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "囊壳粘连成团或渗油即弃用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "氨基酸螯合钙片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "每次补钙量不宜超过500毫克元素钙，分次服吸收更好",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "牡蛎碳酸钙咀嚼片",
+  "aliases": [
+   "牡蛎钙片"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；防潮，取片后立即拧紧",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "海洋来源钙源须留意重金属检测合规性，认准保健食品批准文号",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "碳酸钙维D3颗粒（袋装）",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "冲配后即饮，久置会沉淀且易滋生细菌",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "琥珀酸亚铁片",
+  "aliases": [
+   "速力菲"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；受潮氧化后颜色变深即弃",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "大便变黑属正常；与钙剂、浓茶、牛奶间隔至少2小时",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "富马酸亚铁咀嚼片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封避光防潮",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "铁剂过量对儿童有致命风险，务必上锁或高处存放",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "富马酸亚铁颗粒",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "服后漱口可减少牙齿染色",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "甘氨酸亚铁片（螯合铁）",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "胃肠刺激较小，但确诊缺铁性贫血仍须遵医嘱用治疗量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "血红素铁软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；受热易粘连",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "保健食品补铁量有限，中重度贫血须就医",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "乳酸亚铁口服溶液",
+  "aliases": [],
+  "form": "口服液",
+  "open_days": null,
+  "open_note": "单支装，开启后当次服完，剩余不留存",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "宜用吸管服用以减少牙齿染色，服后漱口",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "葡萄糖酸锌颗粒",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "空腹服易恶心，建议餐后服；与铁剂间隔至少2小时",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "葡萄糖酸锌口服溶液",
+  "aliases": [],
+  "form": "口服液",
+  "open_days": null,
+  "open_note": "单支装，开启后当次服完，剩余不留存",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "长期补锌须留意铜缺乏，勿无指征常年服用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "锌硒咀嚼片",
+  "aliases": [
+   "锌硒宝"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "硒有明确安全上限，勿与其他含硒制剂叠加",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "硒酵母片",
+  "aliases": [
+   "硒维康"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封避光",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "硒过量可致脱发指甲变脆，须按标示量服用不自行加量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "甘氨酸镁胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "肾功能不全者补镁须遵医嘱，谨防高镁血症",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "柠檬酸镁颗粒",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "剂量偏大时有轻泻作用，出现腹泻应减量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "钙镁锌片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；防潮，保留干燥剂",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "钙与锌互相竞争吸收，效果不如分开时段单独补",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "深海鱼油软胶囊",
+  "aliases": [
+   "汤臣倍健深海鱼油"
+  ],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；开盖后氧化加速，务必拧紧避热",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "咬破有明显哈喇味即已氧化，应整瓶弃用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "精制鱼油软胶囊（高浓度EPA/DHA）",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光避热密封",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "大剂量可能延长出血时间，术前及服抗凝药者须告知医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "浓缩鱼肝油软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；遇光遇热易氧化",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "含维生素A与D，与其他AD制剂同服须核算总量防过量",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "亚麻籽油软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；不饱和度高，须避光避热",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "夏季高温可整瓶密封冷藏，但取出后勿反复温差变化",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "南极磷虾油软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封避光防热",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "甲壳类过敏者禁用；服抗凝药者先咨询医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "月见草油软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光避热",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "有癫痫史或服抗凝药者慎用，先咨询医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "辅酶Q10软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光密封，受热易粘连",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "会削弱华法林抗凝效果，服抗凝药者须先咨询医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "还原型辅酶Q10胶囊（泛醇）",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；还原型更怕光怕热，须严格避光",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "内容物由乳白转深黄多为氧化，出现明显变色即弃用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "益生菌固体饮料（袋装粉剂）",
+  "aliases": [
+   "益生菌冲剂"
+  ],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "用不超过40℃的温水或温奶冲调，高温会杀死活菌",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "益生菌粉（罐装）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 30,
+  "open_note": "罐装多剂量开封后活菌衰减快且易吸潮，取保守30天（参考值）",
+  "storage": "冷藏",
+  "refrigerated": true,
+  "tip": "每次用干燥勺取粉，勺子沾水会让整罐结块变质",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "益生菌咀嚼片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 90,
+  "open_note": "瓶装开封后活菌数随受潮下降，取保守3个月（参考值）",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "标称活菌数为出厂值，临近效期实际含量会明显低于标示",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "益生菌胶囊（冷藏型）",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 90,
+  "open_note": "开封后全程2～8℃冷藏，取保守3个月（参考值），且不超过原印刷效期",
+  "storage": "冷藏",
+  "refrigerated": true,
+  "tip": "常温运输或长时间脱冷会大幅折损活菌，收货后尽快回冷",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "低聚果糖益生元粉（袋装）",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "初次服用易腹胀排气，宜从小量起加",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "乳清蛋白粉（罐装）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 60,
+  "open_note": "罐装开封后厂商多标3个月内用完，取保守60天（参考值）",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "务必用干燥勺取粉并盖紧，受潮结硬块或有异味即弃",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "大豆分离蛋白粉（罐装）",
+  "aliases": [
+   "汤臣倍健蛋白粉"
+  ],
+  "form": "其他",
+  "open_days": 60,
+  "open_note": "罐装开封后厂商多标3个月内用完，取保守60天（参考值）",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "肾功能不全者额外补蛋白须遵医嘱",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "胶原蛋白肽粉（袋装）",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "口服胶原蛋白在肠道会被分解为氨基酸，勿期待定向补到皮肤",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "胶原蛋白肽口服液",
+  "aliases": [],
+  "form": "口服液",
+  "open_days": null,
+  "open_note": "单支装，开启后当次饮完，剩余不留存",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "未开封整箱可常温，开封后剩液冷藏过夜同样不建议留用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "褪黑素片",
+  "aliases": [
+   "美乐托宁"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光密封防潮",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "服后勿驾车或操作机械；长期失眠须就医查因而非长期自服",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "褪黑素维生素B6胶囊",
+  "aliases": [
+   "脑白金"
+  ],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光密封",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "孕妇、哺乳期、自身免疫病人群及儿童不建议自行服用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "褪黑素软糖",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 90,
+  "open_note": "罐装软糖开封后易吸潮粘连，取保守3个月（参考值）",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "形似糖果，必须放到儿童够不到处，误食过量可致嗜睡",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "氨糖软骨素加钙片",
+  "aliases": [
+   "健力多"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；防潮，保留干燥剂",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "甲壳类过敏者慎用；糖尿病人服用期间留意血糖",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "硫酸氨基葡萄糖胶囊",
+  "aliases": [
+   "维固力",
+   "伊索佳"
+  ],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；吸湿性强，须密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "起效缓慢，通常需连续服用数周才评估效果",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "盐酸氨基葡萄糖片",
+  "aliases": [
+   "奥泰灵"
+  ],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封防潮",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "与硫酸氨基葡萄糖不叠加服用，选其一即可",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "叶黄素酯软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；见光易褪色失效，须严格避光",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "吸烟者慎选含β-胡萝卜素的复方版本",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "叶黄素酯软糖",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 90,
+  "open_note": "罐装软糖开封后易吸潮粘连，取保守3个月（参考值）",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "口感似糖果，须限量并放在儿童拿不到处",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "叶黄素酯玉米黄质咀嚼片（儿童型）",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光防潮",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "补充剂不能替代减少近距离用眼与户外活动",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "叶黄素酯微囊粉（袋装）",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "用温水而非开水冲调，高温会破坏微囊",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "乳铁蛋白粉（袋装）",
+  "aliases": [],
+  "form": "颗粒剂",
+  "open_days": null,
+  "open_note": "单剂量袋装，拆开当次冲服用完，不留存",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "须用不超过40℃温水冲调，高温会使活性蛋白变性",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "乳铁蛋白调制乳粉（罐装）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 30,
+  "open_note": "罐装乳粉开封后取保守1个月（参考值）；每次用干燥勺取粉并盖紧",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "整罐冷藏反而易受潮结块，常温阴凉干燥处更合适",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "DHA藻油软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光避热，防止油脂氧化",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "咬破有哈喇味即已氧化，应弃用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "DHA藻油凝胶糖果（儿童型）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光防热，防粘连",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "可咬破挤出油拌入温凉辅食，勿混入热食",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "DHA藻油滴剂（瓶装）",
+  "aliases": [],
+  "form": "滴剂",
+  "open_days": 30,
+  "open_note": "多剂量油性滴瓶开封后取保守30天（参考值）；避光密封",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "滴管勿接触口腔或食物表面，避免回流污染整瓶",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "蜂蜜（瓶装）",
+  "aliases": [
+   "洋槐蜜",
+   "百花蜜"
+  ],
+  "form": "其他",
+  "open_days": 180,
+  "open_note": "开封后取用须洁净干燥，参考值6个月内用完，且不超过原印刷效期",
+  "storage": "常温",
+  "refrigerated": false,
+  "tip": "1岁以下婴儿禁食，有肉毒杆菌芽孢中毒风险",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "鲜蜂王浆（冷冻装）",
+  "aliases": [
+   "蜂皇浆"
+  ],
+  "form": "其他",
+  "open_days": 15,
+  "open_note": "解冻取用后须全程2～8℃冷藏，取保守15天（参考值）",
+  "storage": "冷藏",
+  "refrigerated": true,
+  "tip": "长期存放应分装冷冻，避免整瓶反复解冻；蜂产品过敏者禁用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "蜂王浆冻干粉胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；冻干粉极易吸潮，须密封防潮",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "过敏体质及哮喘患者慎用，首次少量试服",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "蜂胶软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光防热",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "含黄酮成分可能影响华法林等药物代谢，服药者先咨询医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "蜂花粉片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；受潮易霉变，须密封防潮",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "花粉过敏者禁用，首次服用宜极小量试探",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "阿胶粉（即食型）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 90,
+  "open_note": "罐装粉剂开封后极易吸潮结块，取保守3个月（参考值）",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "结块发黏或有酸败味即弃；感冒发热期间暂停服用",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "阿胶糕（独立小包装）",
+  "aliases": [],
+  "form": "其他",
+  "open_days": null,
+  "open_note": "独立小包装，按外盒印刷效期使用，拆开当次吃完",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "夏季整盒可密封冷藏防软化粘连，含糖量高糖尿病人慎食",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "龟甲胶块",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 180,
+  "open_note": "开封后密封防潮避高温，参考值6个月内用完",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "须烊化后服用，脾胃虚寒者慎用，用法遵中医师指导",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "鹿角胶块",
+  "aliases": [],
+  "form": "其他",
+  "open_days": 180,
+  "open_note": "开封后密封防潮避高温，参考值6个月内用完",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "性温易上火，阴虚火旺者慎用，用法遵中医师指导",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "螺旋藻片",
+  "aliases": [],
+  "form": "片剂",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；密封避光防潮",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "藻类易富集重金属，须认准保健食品批准文号，勿买散装",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "大豆异黄酮软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；避光防热",
+  "storage": "阴凉",
+  "refrigerated": false,
+  "tip": "有雌激素相关肿瘤病史者禁用，须先咨询医生",
+  "category": "膳食补充剂与保健食品"
+ },
+ {
+  "name": "番茄红素软胶囊",
+  "aliases": [],
+  "form": "胶囊",
+  "open_days": 180,
+  "open_note": "瓶装开封后参考值6个月内用完；见光极易褪色失活，须严格避光",
+  "storage": "避光",
+  "refrigerated": false,
+  "tip": "随餐含油脂服吸收更好；囊内由红转浅黄即已降解",
+  "category": "膳食补充剂与保健食品"
+ }
+]

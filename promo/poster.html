@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>第二时钟 · 海报</title>
+<style>
+  :root{
+    --green:#237a55;
+    --green-deep:#17513a;
+    --green-soft:#5f9b81;
+    --ink:#1d2b25;
+    --ink-mid:#48594f;
+    --ink-soft:#7d8d84;
+    --paper:#f6f9f7;
+    --hair:#d5e3db;
+    --amber:#c8871c;
+    --red:#c4483c;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html,body{
+    width:100vw;height:100vh;overflow:hidden;
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:geometricPrecision;
+  }
+
+  body{
+    font-family:"Noto Sans SC","Source Han Sans SC","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sans-serif;
+    color:var(--ink);
+    font-feature-settings:"kern" 1;
+  }
+
+  /* ---------- stage ---------- */
+  .stage{
+    position:relative;
+    width:100vw;height:100vh;
+    padding:104px 88px 76px;
+    display:flex;flex-direction:column;
+    overflow:hidden;
+    /* two soft washes: warm light from top-right, faint cool base bottom-left */
+    background:
+      radial-gradient(760px 620px at 100% -6%,  rgba(35,122,85,.085), transparent 62%),
+      radial-gradient(680px 560px at -12% 106%, rgba(35,122,85,.045), transparent 60%),
+      var(--paper);
+  }
+
+  /* ---------- decorative dial, bleeds off top-right ---------- */
+  .dial{
+    position:absolute;top:-206px;right:-186px;
+    width:600px;height:600px;pointer-events:none;
+  }
+  .dial .ticks{opacity:.30}
+  .dial .arc-dead{opacity:.34}
+  .dial .arc-live{opacity:.92}
+
+  /* faint mirrored dial, bottom-left, very quiet */
+  .dial-ghost{
+    position:absolute;left:-260px;bottom:-268px;
+    width:520px;height:520px;pointer-events:none;opacity:.16;
+  }
+
+  /* ---------- hook ---------- */
+  .hook{
+    position:relative;
+    font-size:50px;line-height:1.52;font-weight:500;
+    color:var(--ink-mid);letter-spacing:.01em;
+  }
+  .hook .hit{
+    color:var(--green);font-weight:700;
+    box-shadow:inset 0 -.30em 0 rgba(35,122,85,.14);
+  }
+
+  /* ---------- title block ---------- */
+  .titleblock{position:relative;margin-top:58px}
+
+  .title{
+    font-size:218px;line-height:1;font-weight:900;
+    letter-spacing:.012em;color:var(--green);
+    /* keeps the giant glyphs optically flush with the left margin */
+    margin-left:-.055em;
+  }
+
+  .sub{
+    margin-top:34px;
+    font-size:47px;line-height:1.35;font-weight:500;
+    color:var(--ink);letter-spacing:.015em;
+  }
+
+  .rule{
+    margin-top:52px;
+    width:132px;height:7px;border-radius:4px;
+    background:var(--green);opacity:.88;
+  }
+
+  /* ---------- spacer keeps the badges anchored low ---------- */
+  .spacer{flex:1 1 auto;min-height:26px}
+
+  /* ---------- the core idea: two clocks, one of them invisible ---------- */
+  .concept{position:relative}
+  .crow{
+    display:flex;align-items:baseline;gap:20px;
+    font-size:31px;line-height:1.5;letter-spacing:.015em;
+  }
+  .crow + .crow{margin-top:22px}
+  .crow .dot{
+    flex:none;width:16px;height:16px;border-radius:50%;
+    transform:translateY(-3px);
+  }
+  .crow .k{flex:none;font-weight:700}
+  .crow .v{font-weight:400}
+
+  .crow.dim .dot{background:#c2cfc8}
+  .crow.dim .k{color:var(--ink-soft)}
+  .crow.dim .v{color:var(--ink-soft)}
+
+  .crow.live .dot{background:var(--green);box-shadow:0 0 0 7px rgba(35,122,85,.13)}
+  .crow.live .k{color:var(--green)}
+  .crow.live .v{color:var(--ink)}
+
+  /* ---------- badges ---------- */
+  .badges{
+    position:relative;
+    display:grid;grid-template-columns:1fr 1fr 1fr;
+    align-items:end;
+  }
+  .badge{padding:0 8px}
+  .badge + .badge{border-left:2px solid var(--hair);padding-left:44px}
+  .badge:nth-child(2){padding-left:44px}
+
+  .badge .big{
+    display:block;
+    font-size:70px;line-height:1.06;font-weight:900;
+    color:var(--green);letter-spacing:.005em;
+  }
+  .badge .lab{
+    display:block;margin-top:12px;
+    font-size:27px;line-height:1.35;font-weight:500;
+    color:var(--ink-soft);letter-spacing:.02em;
+  }
+
+  /* ---------- footer ---------- */
+  .foot{
+    position:relative;
+    margin-top:66px;padding-top:32px;
+    border-top:2px solid var(--hair);
+    display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  }
+  .foot .team{
+    font-size:29px;font-weight:700;color:var(--ink);letter-spacing:.04em;
+    white-space:nowrap;
+  }
+  .foot .team em{
+    font-style:normal;font-weight:500;color:var(--ink-soft);
+    margin-right:14px;letter-spacing:.06em;
+  }
+  .foot .note{
+    font-size:22px;font-weight:400;color:var(--ink-soft);
+    letter-spacing:.02em;text-align:right;line-height:1.45;
+  }
+
+  /* =========================================================
+     SQUARE VARIANT — auto-applies when rendered at 1080x1080.
+     3:4 canvas has ratio .75; square has 1.0.
+     ========================================================= */
+  @media (min-aspect-ratio: 9/10){
+    .stage{padding:76px 84px 58px}
+    .hook{font-size:42px;line-height:1.45}
+    .titleblock{margin-top:36px}
+    .title{font-size:182px}
+    .sub{margin-top:24px;font-size:40px}
+    .rule{margin-top:32px;width:112px;height:6px}
+    .spacer{min-height:30px}
+    .crow{font-size:28px}
+    .crow + .crow{margin-top:16px}
+    .crow .dot{width:14px;height:14px}
+    .crow.live .dot{box-shadow:0 0 0 6px rgba(35,122,85,.13)}
+    .badge .big{font-size:62px}
+    .badge .lab{margin-top:9px;font-size:25px}
+    .badge + .badge{padding-left:38px}
+    .badge:nth-child(2){padding-left:38px}
+    .foot{margin-top:48px;padding-top:26px}
+    .dial{top:-224px;right:-198px}
+    .dial-ghost{bottom:-300px}
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <!-- decorative: outer ring = the printed expiry (stopped), inner arc = the second clock (running) -->
+  <svg class="dial" viewBox="0 0 600 600" aria-hidden="true">
+    <!-- tick ring -->
+    <circle class="ticks" cx="300" cy="300" r="272"
+            fill="none" stroke="#237a55" stroke-width="11"
+            stroke-linecap="round" stroke-dasharray="2 26"/>
+    <!-- first clock: full circle, thin, muted — printed on the box, already stopped -->
+    <circle class="arc-dead" cx="300" cy="300" r="212"
+            fill="none" stroke="#237a55" stroke-width="5"/>
+    <!-- second clock: a live arc, ~34% swept, rounded cap.
+         Rotated to 105deg so the sweep falls in the ring's lower-left quadrant —
+         the only part of this bleed graphic that is actually on canvas. -->
+    <circle class="arc-live" cx="300" cy="300" r="212"
+            fill="none" stroke="#237a55" stroke-width="18" stroke-linecap="round"
+            stroke-dasharray="453 879" transform="rotate(105 300 300)"/>
+  </svg>
+
+  <svg class="dial-ghost" viewBox="0 0 600 600" aria-hidden="true">
+    <circle cx="300" cy="300" r="272" fill="none" stroke="#237a55" stroke-width="10"
+            stroke-linecap="round" stroke-dasharray="2 26"/>
+    <circle cx="300" cy="300" r="212" fill="none" stroke="#237a55" stroke-width="4"/>
+  </svg>
+
+  <p class="hook">
+    药盒上印着 2027 年到期，<br>
+    <span class="hit">开封后可能只剩 4 周</span>
+  </p>
+
+  <div class="titleblock">
+    <h1 class="title">第二时钟</h1>
+    <p class="sub">你的药，开封后还能用多久</p>
+    <div class="rule"></div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="concept">
+    <div class="crow dim">
+      <span class="dot"></span>
+      <span class="k">第一个时钟</span>
+      <span class="v">药盒上印的有效期</span>
+    </div>
+    <div class="crow live">
+      <span class="dot"></span>
+      <span class="k">第二个时钟</span>
+      <span class="v">开封后重新起算，没人替你记</span>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="badges">
+    <div class="badge">
+      <span class="big">1832</span>
+      <span class="lab">种常见药<br>开封效期</span>
+    </div>
+    <div class="badge">
+      <span class="big">离线</span>
+      <span class="lab">断网也能查<br>数据都在网页里</span>
+    </div>
+    <div class="badge">
+      <span class="big">双 AI</span>
+      <span class="lab">拍照认药交叉验证<br>不一致就不代填</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="team"><em>出品人</em>inoichi</div>
+    <div class="note">开封效期为参考值，以说明书为准<br>打开网页即用，无需下载注册</div>
+  </div>
+
+</div>
+</body>
+</html>

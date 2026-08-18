@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第二时钟 · 使用手册</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f5f1;
+      --panel: #ffffff;
+      --ink: #17211c;
+      --muted: #68736d;
+      --line: #dfe5e0;
+      --green: #237a55;
+      --green-soft: #e8f5ee;
+      --yellow: #a96900;
+      --yellow-soft: #fff3cc;
+      --red: #c83333;
+      --red-soft: #ffe2e2;
+      --shadow: 0 16px 40px rgba(25, 48, 36, .08);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .page {
+      width: calc(100% - 32px);
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    header.cover {
+      padding: 26px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .94);
+      box-shadow: var(--shadow);
+    }
+
+    header.cover h1 {
+      margin: 0 0 6px;
+      font-size: 27px;
+      letter-spacing: -.5px;
+    }
+
+    header.cover .subtitle {
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    header.cover p.lead {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    header.cover .credit {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    nav.toc {
+      margin: 18px 0 0;
+      padding: 16px 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    nav.toc strong { font-size: 14px; }
+
+    nav.toc ol {
+      margin: 8px 0 0;
+      padding-left: 22px;
+      font-size: 14px;
+    }
+
+    nav.toc a { color: var(--green); }
+
+    section.card {
+      margin-top: 20px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow-wrap: anywhere;
+    }
+
+    section.card > h2 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      letter-spacing: -.3px;
+    }
+
+    section.card > .sec-note {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 16px;
+    }
+
+    h3:first-of-type { margin-top: 14px; }
+
+    h4 {
+      margin: 16px 0 6px;
+      font-size: 14.5px;
+    }
+
+    p { margin: 0 0 10px; font-size: 15px; }
+
+    ul, ol { margin: 0 0 12px; padding-left: 22px; font-size: 15px; }
+
+    li { margin-bottom: 6px; }
+
+    .ui {
+      display: inline-block;
+      padding: 1px 7px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #f6f8f5;
+      font-size: 13.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .quote {
+      display: block;
+      margin: 6px 0 10px;
+      padding: 9px 13px;
+      border-left: 3px solid var(--line);
+      border-radius: 0 10px 10px 0;
+      background: #f6f8f5;
+      color: #2c3a33;
+      font-size: 13.5px;
+    }
+
+    .steps {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps > li {
+      position: relative;
+      margin-bottom: 12px;
+      padding: 12px 14px 12px 46px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfcfa;
+      font-size: 15px;
+    }
+
+    .steps > li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 12px;
+      left: 13px;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .steps small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 1px 9px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .chip.g { color: var(--green); background: var(--green-soft); }
+    .chip.y { color: var(--yellow); background: var(--yellow-soft); }
+    .chip.r { color: var(--red); background: var(--red-soft); }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 12px; }
+
+    table {
+      width: 100%;
+      min-width: 460px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #f2f5f1; font-weight: 800; }
+
+    .note {
+      margin: 12px 0;
+      padding: 12px 14px;
+      border: 1px solid #f0dfae;
+      border-radius: 14px;
+      background: var(--yellow-soft);
+      color: #4a3200;
+      font-size: 14px;
+    }
+
+    .note strong { color: #7a4b00; }
+
+    .danger {
+      margin: 12px 0;
+      padding: 12px 14px;
+      border: 1px solid #f3c6c6;
+      border-radius: 14px;
+      background: var(--red-soft);
+      color: #7d1f1f;
+      font-size: 14px;
+    }
+
+    .ok {
+      margin: 12px 0;
+      padding: 12px 14px;
+      border: 1px solid #c6e3d3;
+      border-radius: 14px;
+      background: var(--green-soft);
+      color: #14503a;
+      font-size: 14px;
+    }
+
+    details.faq {
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfcfa;
+    }
+
+    details.faq > summary {
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    details.faq > div { margin-top: 8px; font-size: 14.5px; }
+
+    details.faq p:last-child { margin-bottom: 0; }
+
+    footer.foot {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 12.5px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      section.card { padding: 18px 16px; }
+      header.cover { padding: 20px 16px; }
+      header.cover h1 { font-size: 23px; }
+      .page { padding-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <header class="cover">
+    <h1>第二时钟</h1>
+    <p class="subtitle">你的药，开封后还能用多久</p>
+    <p class="lead">药盒上印着的是第一个时钟；药品开封后重新开始的倒计时，是第二个时钟。</p>
+    <p class="lead">使用手册</p>
+    <p class="credit">出品人：inoichi</p>
+    <p class="lead"><a href="index.html">▶ 打开应用</a></p>
+  </header>
+
+  <nav class="toc">
+    <strong>目录</strong>
+    <ol>
+      <li><a href="#intro">作品简介</a></li>
+      
+      <li><a href="#features">功能详解</a></li>
+      <li><a href="#quick">上手走一遍</a></li>
+      <li><a href="#privacy">数据与隐私</a></li>
+      <li><a href="#faq">常见问题</a></li>
+      <li><a href="#disclaimer">免责声明</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============================ 1. 作品简介 ============================ -->
+  <section class="card" id="intro">
+    <h2>一、作品简介</h2>
+    <p class="sec-note">一句话：把「开封那天起还能用多久」算清楚。<strong>每次你打开这个页面时</strong>，卡片会按剩余天数变色、到期的顶上红色横幅；它<strong>不会在页面关着的时候给你发通知</strong>。</p>
+
+    <h3>「第二时钟」这个名字</h3>
+    <p>每一盒药身上其实有两个时钟。</p>
+    <ul>
+      <li><strong>第一个时钟</strong>：药盒上印刷的有效期。它从出厂就开始走，谁都看得见。</li>
+      <li><strong>第二个时钟</strong>：开封（首次启用）那一刻重新起算的那个期限。它没有印在任何地方，一旦拆封就开始倒数，而且经常<strong>比第一个时钟先走完</strong>。</li>
+    </ul>
+    <p>眼药水拆封 28 天、混悬液配好 14 天、碘伏棉签开罐 7 天、75% 酒精倒出使用 1 个月——这些数字只写在说明书里，看完就忘。本作品做的就是把这块看不见的表盘显示出来，所以叫「第二时钟」。</p>
+
+    <h3>解决的真实问题</h3>
+    <ul>
+      <li><strong>药盒上写着 2027 年过期，开封后的期限却可能早就到了。</strong>这两个日期是两回事，而只有前一个印在盒子上——后一个很容易被忽略。</li>
+      <li><strong>说明书里的天数记不住、也不好查。</strong>应用内置 <strong>1832 条</strong>常见药品开封效期数据 + <strong>23 条</strong>剂型通用规则，打出药名就自动填好天数，不用翻纸片。</li>
+      <li><strong>没人会主动去数日子。</strong>卡片按剩余天数排序，绿 / 黄 / 红三档一眼可辨；一旦有药到期，页面顶部直接压一条红色横幅。</li>
+    </ul>
+
+    <div class="ok">
+      <strong>形态：</strong>单文件网页，打开即用，<strong>不需要注册、不需要登录</strong>。药品记录保存在你自己浏览器里（详见「数据与隐私」）。
+    </div>
+
+    <div class="note">
+      <p><strong>想知道它是怎么做出来的？</strong></p>
+      <p>我们另写了一份 <a href="making.html"><strong>开发过程报告</strong></a>，
+      记的不是功能怎么实现，而是<strong>这个应用在哪些地方差点给出错的答案</strong>——
+      七条缺陷逐条摊开，包括作者自己用正则批量改医疗数据、19 条里改错 12 条的那次。</p>
+      <p class="muted">如果你正在犹豫要不要相信一个 AI 写的健康类工具，那份报告比这份手册更值得看。</p>
+    </div>
+  </section>
+
+  <!-- ============================ 2. 快速体验 ============================ -->
+  <section class="card" id="features">
+    <h2>二、功能详解</h2>
+    
+    <h3>2.1 两个时钟与颜色档</h3>
+    <p>每张卡片同时跑两个时钟，谁先到期就听谁的：</p>
+    <ul>
+      <li><strong>印刷有效期</strong>——盒子上印的那个日期（可留空）。</li>
+      <li><strong>开封后可用天数 + 首次启用日期</strong>——两者都填齐，才会算出「开封截止日期」。</li>
+    </ul>
+    <p>卡片上的 <strong>实际停用日期</strong> 取两者中较早的一个，并注明<strong>停用原因</strong>，文案只有两种：「停用原因：因印刷有效期到期」或「停用原因：因开封后有效期到期」。颜色按这个较早的剩余天数判定：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>剩余天数</th><th>颜色档</th><th>卡片文案</th></tr></thead>
+        <tbody>
+          <tr><td>8 天及以上</td><td><span class="chip g">绿</span></td><td>剩余 N 天</td></tr>
+          <tr><td>4 – 7 天</td><td><span class="chip y">黄</span></td><td>剩余 N 天</td></tr>
+          <tr><td>1 – 3 天</td><td><span class="chip r">红</span></td><td>剩余 N 天</td></tr>
+          <tr><td>正好 0 天</td><td><span class="chip r">红</span></td><td>今天到期，请停止使用</td></tr>
+          <tr><td>已超过</td><td><span class="chip r">红</span></td><td>已过期 N 天 + 「已超过开封后有效期，请停止使用」或「已超过包装上的有效期，请停止使用」</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>只要药箱里存在剩余天数 ≤ 0 的药，页面顶端就会出现红色横幅，把这些药名连起来写——正好到期的写「××今天到期，请停止使用」，已经超过的写「××已过期，请停止使用」。</p>
+
+    <h3>2.2 添加产品：两个入口</h3>
+    <p>「添加产品」面板上有两个页签：<span class="ui">拍照识别</span> 与 <span class="ui">手动填写</span>，默认停在手动填写。两边内容都在，切换时若已有草稿或已选照片，会弹一个确认框（文案为「切换后将保留图片，但不再使用AI识别。」／「切换后将保留已填写内容。」），不会静默丢弃你填的东西。</p>
+
+    <h4>手动填写的字段</h4>
+    <ul>
+      <li><span class="ui">产品名称</span>（必填，也是药库匹配的钥匙）</li>
+      <li><span class="ui">使用人</span>（见 2.6）</li>
+      <li><span class="ui">产品类别</span>、<span class="ui">规格</span></li>
+      <li><span class="ui">印刷有效期</span>（日期选择）</li>
+      <li><span class="ui">首次启用日期</span>：三个按钮 <span class="ui">尚未启用</span> / <span class="ui">今天启用</span>（默认） / <span class="ui">选择日期</span></li>
+      <li><span class="ui">开封后可用天数</span></li>
+      <li><span class="ui">更多信息</span> 折叠区：品牌、剂型、储存说明、规则来源、备注</li>
+    </ul>
+    <p><strong>校验规则（实际生效的三条）：</strong>产品名称不能为空；<strong>印刷有效期与开封后可用天数至少填一项</strong>；选「选择日期」时该日期不能晚于当前（模拟）日期。此外，若药箱里已有<strong>同名且尚未到停用日期</strong>的药，保存时会先问一句「药箱里已有「XX」，仍要再添加一条吗？」。</p>
+
+    <h3>2.3 拍照识别与「两个模型交叉验证」</h3>
+    <p>点 <span class="ui">拍照识别</span> 选 1–4 张药盒照片，AI 会读出产品名称、商品名、规格、剂型与包装上印的有效期。这一步需要联网。</p>
+    <div class="note"><strong>建议一次只拍一种药</strong>——同一种药可以多拍几张（正面一张、有效期喷码一张），应用会合并成一条。一次拍多种也能识别，但两个模型对多件产品的排序未必一致，逐一录入更稳妥。</div>
+    <div class="ok">
+      <strong>为什么要用两个模型：</strong>一个模型说「我有把握」是不作数的——实测中它一边编造药名，一边把置信度标成「高」。
+      所以每次识别会把同一张照片<strong>交给两家不同厂商的模型各看一遍</strong>（阿里云百炼 Qwen-VL 与智谱 GLM-4.6V；主结果先出，核对结论随后返回），
+      两边<strong>互不知道对方的答案</strong>，再比对它们读出的药名。
+      两个模型的作用主要是<strong>发现分歧</strong>：结果不一致时应用立刻停手、一个字都不代填。一致<strong>不等于一定对</strong>——两家仍可能被同一处模糊的包装误导而一起读错，所以一致时也只当作录入参考，仍需你对照包装确认。
+    </div>
+    <p>识别结果里会出现一条徽章，三种情形：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>徽章</th><th>含义</th><th>应用会做什么</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip g">一致</span></td><td>两个模型读出<strong>完全相同</strong>的药名</td><td>正常按内置药库预填开封天数</td></tr>
+          <tr><td><span class="chip r">不一致</span></td><td>两家读出的药名有任何差别（哪怕只差剂型或「复方」二字），会把两个答案都列给你看</td><td><strong>不预填任何天数、不带出储存条件、不给联网查询入口</strong>，请你以包装为准</td></tr>
+          <tr><td><span class="chip y">仅一个模型</span></td><td>另一个模型没返回（超时或限流）</td><td>照常显示，但提示缺少交叉核对</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>措辞上的分寸：</strong>徽章写的是「结果一致」，不是「已验证」。
+      两家一致只能说明<strong>至少不是某一家自己编的</strong>，不代表一定对——它们仍可能同时读错。所以最终仍请你对照包装确认。
+    </div>
+    <div class="danger">
+      <strong>有效期一律不自动填。</strong>即便两个模型都读出了同一个日期，应用也只把它作为<strong>「待确认」</strong>提出来，
+      要你点一下确认才会写进记录。原因是实测发现：模型会在自称「读到了印刷有效期、置信度高」的同时，
+      把包装上<strong>注册批准号旁边的日期</strong>当成有效期，甚至<strong>凭空编出一段并不存在的证据文字</strong>。
+      为此应用另加了两道机器核对——包装语种与证据文字语种不符、或它声称的年份根本不在它抄下来的原文里，
+      这个日期一律作废、不代填。药名错了你多半看得出来（药盒就在手上），<strong>日期错了你看不出来</strong>，
+      而那恰恰是你找工具替你记的东西。
+    </div>
+
+    <h3>2.4 内置药库预填（离线可用）</h3>
+    <p>在 <span class="ui">产品名称</span> 里打字，停手约 0.4 秒（或失焦）就会去查内置药库，命中后自动填 <strong>开封后可用天数</strong>、<strong>储存说明</strong>、<strong>规则来源</strong>三个字段。药库共 <strong>1832 条</strong>家庭药箱相关条目（含药品、消毒用品与部分健康用品），配有常见商品名／别名（例如打「美林」能命中「布洛芬混悬液」）与 <strong>23 条</strong>剂型参考规则（如「滴剂 28 天」）。匹配结果分四种，提示语各不相同：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>匹配情况</th><th>提示语</th><th>是否自动填</th></tr></thead>
+        <tbody>
+          <tr><td>药名精确命中</td><td>📚 已按内置药库预填</td><td>是</td></tr>
+          <tr><td>近似命中</td><td>📚 已按内置药库近似匹配预填（药名未完全一致，请核对）</td><td>是</td></tr>
+          <tr><td>只命中剂型规则</td><td>📚 已按内置剂型规则预填</td><td>是</td></tr>
+          <tr><td>同一个名字下有多个剂型</td><td>⚠️ 这个名字下有多个剂型（……），开封后能用多久不一样，所以没有替你填。看一眼药盒上的完整名称，最后几个字是哪种剂型，就在下面点哪个。<br>—— 并就地出现一排剂型按钮</td><td><strong>否</strong>，直到你选定剂型</td></tr>
+          <tr><td>命中多个期限不一致的条目</td><td>⚠️ 药库中有多个条目含该名称（……），开封期限不一致，未自动预填；请补全完整通用名（含剂型）或联网查询</td><td><strong>否</strong>（宁可不填，也不猜）</td></tr>
+          <tr><td>完全没收录</td><td>🔍 内置药库未收录「XX」，可点下方按钮联网查询开封效期</td><td>否</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <p><strong>关于「剂型」这个字段：平时选填，撞上同名多剂型时变必填。</strong></p>
+      <p>一个商品名常常同时覆盖好几个剂型，而它们的开封期限可以差得很远。例如 <span class="ui">希刻劳</span>
+      既是头孢克洛<strong>干混悬剂</strong>（加水冲配后需冷藏，14 天内用完），也是头孢克洛<strong>胶囊</strong>
+      （按外盒印刷效期，常温存放）。<span class="ui">泰诺林</span>、<span class="ui">可乐必妥</span>、
+      <span class="ui">兰美抒</span> 等也是同样情况，全库共 27 处。</p>
+      <p>遇到这种情况，应用<strong>不会替你猜一个</strong>——它会在提示下面列出所有候选剂型的按钮，
+      你照着药盒上印的剂型点一下就行。点完之后天数与储存条件才会填进来，
+      同时「更多信息」会自动展开，让你看见剂型字段确实被写进去了。
+      也可以直接在「更多信息 → 剂型」里手打，效果一样。</p>
+      <p class="muted">为什么做成让你点剂型、而不是让你「补全完整通用名」：剂型就印在药盒上，
+      照抄一眼的事；而「完整通用名」你要是知道，一开始就不会打商品名了。</p>
+    </div>
+
+    <div class="note">
+      <strong>关于「自动填写会不会覆盖我改的值」——这里说实话：</strong>
+      <ul>
+        <li><strong>你亲手改过的开封天数不会被覆盖。</strong>只要你在 <span class="ui">开封后可用天数</span> 里输入过内容，该字段小字会变成「已手动修改」，此后药库预填不再动它。</li>
+        <li><strong>但由药库自动填进去的值，会随药名改动被清空并重新计算。</strong>这是有意为之：药名从 A 改成 B 之后，还留着 A 的天数会更危险。所以「填完就此永远不再变动」的说法并不成立，请以字段下方那行小字（「已根据产品规则填写，可修改」／「已手动修改」）为准。</li>
+        <li>储存说明、规则来源同理：自动填的会随药名重算，你自己写过的不会被动。</li>
+      </ul>
+    </div>
+
+    <h3>2.5 联网查询开封效期</h3>
+    <p>当药库<strong>没收录</strong>、<strong>判为歧义</strong>、或<strong>只命中剂型规则</strong>时，产品名称下方会出现 <span class="ui">🔍 联网查询开封效期</span> 按钮（药库精确／近似命中时该按钮不出现，因为没必要花这一次请求）。点击后会把<strong>药名</strong>发给第三方 AI 服务检索并提炼，回填天数与储存条件，提示语以「🌐 联网查询结果，以说明书为准」开头。</p>
+    <ul>
+      <li>查询结果会在这台设备上保留 <strong>30 天</strong>（最多 200 条），重复查同一个药名会直接命中缓存并标注「（本地缓存结果，未重复计费）」。</li>
+      <li>同一药名有 <strong>8 秒</strong>冷却；不同药名互不影响，可以连着查。</li>
+      <li>单次会话最多 <strong>20 次</strong>联网查询，超出后提示改为手动填写。</li>
+      <li>查不到或查询失败时提示「请以药盒说明书为准，或咨询药师／厂家——查不到不等于没有期限」，<strong>不会自动填入天数</strong>，也不会改动你已填好的字段。</li>
+    </ul>
+
+    <h3>2.6 按家人分类</h3>
+    <p>手动表单里有一个 <span class="ui">使用人</span> 下拉框，预置选项为：<strong>未指定 / 爸爸 / 妈妈 / 爷爷 / 奶奶 / 我自己 / 其他…</strong>。选「其他…」会出现一个输入框，可自己写（占位提示「填写使用人（可留空）」）。它的实际作用只有两处：</p>
+    <ul>
+      <li>填了使用人的卡片，<strong>右上角显示一枚姓名徽章</strong>。</li>
+      <li>只要药箱里<strong>至少有一条记录填了使用人</strong>，药品卡片列表顶部就会出现一排筛选按钮：<span class="ui">全部</span> 加上各个使用人名字，点一下即可只看某个人的药。该人名下没有药时显示「这位成员名下暂无药品」。</li>
+    </ul>
+    <div class="danger">
+      <strong>请注意它<u>不是</u>什么：</strong>它只是记录上的一个文本标签，<strong>没有</strong>成员账号、<strong>没有</strong>多人共享、<strong>没有</strong>权限区分、<strong>没有</strong>按人推送提醒。所有记录仍然只存在你这一台设备的这一个浏览器里，换个人的手机看不到。
+    </div>
+
+    <h3>2.7 药品卡片上能做的事</h3>
+    <ul>
+      <li><strong>排序</strong>：按剩余天数从少到多自动排，最先到期的排最上面。</li>
+      <li><strong>标记开封</strong>：填了开封天数但还没启用的卡片，右侧有 <span class="ui">标记开封</span> 按钮，点一下把首次启用日期设为当前日期，倒计时立即开始。</li>
+      <li><strong>无需开封计时</strong>：药库中有一部分条目本来就没有开封天数（例如铝塑板独立密封的片剂、独立铝箔袋颗粒剂——拆开当次用完，整盒按外盒效期）。这类记录的卡片右侧显示灰字「无需开封计时」，只跑印刷有效期这一个时钟。</li>
+      <li><strong>照片</strong>：拍照识别入库的卡片带缩略图，点击可看大图；手动录入的显示 💊 占位。</li>
+      <li><strong>编辑 / 删除</strong>：卡片右上角 <span class="ui">···</span> 展开菜单。删除会二次确认：「确定删除“XX”吗？删除后无法恢复。」</li>
+      <li><strong>冷藏提示</strong>：储存说明以「冷藏」开头的卡片会多一行「❄️ 离开冷藏环境请尽快使用」。</li>
+    </ul>
+
+    <h3>2.8 模拟时间推移</h3>
+    <p>页面下方 <span class="ui">⏱ 模拟时间推移</span>（应用里的原文是「把日期往后拨，提前看看哪些药会到期」） 可展开，内含：当前模拟日期显示、<span class="ui">+1天</span> <span class="ui">+7天</span> <span class="ui">+20天</span> <span class="ui">+30天</span> <span class="ui">恢复今天</span> 五个按钮，以及一个自定义日期输入框配 <span class="ui">应用日期</span>。</p>
+    <p>模拟日期<strong>只在当前页面有效，刷新后会自动回到真实今天</strong>；处于模拟状态时页面最顶端有一条黄色横条说明这一点，点它也可以立刻恢复。药品记录不受影响，照常保留。</p>
+  </section>
+
+  <!-- ============================ 4. 数据与隐私 ============================ -->
+  <section class="card" id="quick">
+    <h2>三、上手走一遍</h2>
+    <p class="sec-note">上面讲了这些功能各是什么，这一节把它们串成一条路走一遍。<strong>最短的一遍：</strong>在「产品名称」输入 <strong>红霉素眼膏</strong> → 点「确认添加」→ 展开页面最下方「⏱ 模拟时间推移」，连点 <strong>+20天 → +1天 → +7天</strong>，卡片会依次由<span class="chip g">绿</span>转<span class="chip y">黄</span>转<span class="chip r">红</span>，顶部弹出红色提示。就这三下。</p>
+    <p class="sec-note">下面是逐步版（约 90 秒），每一步会看到什么都写明了。</p>
+
+    <h3>路径 A · 手动路径（离线可跑，推荐先看这条）</h3>
+    <ol class="steps">
+      <li>
+        打开应用，向下找到 <span class="ui">添加产品</span> 区域，它默认就停在 <span class="ui">手动填写</span> 页签，无需切换。
+      </li>
+      <li>
+        在 <span class="ui">产品名称</span> 里输入 <strong>红霉素眼膏</strong>，稍等片刻（或点一下输入框外面）。
+        <small>输入框下方会出现提示：「📚 已按内置药库预填：开封后可用 28 天，储存 阴凉 · 眼用制剂启用后最多使用4周(《中国药典》对眼用制剂的通用规定)」。<span class="ui">开封后可用天数</span> 自动变成 28，下方小字写「已根据产品规则填写，可修改」。</small>
+      </li>
+      <li>
+        <span class="ui">首次启用日期</span> 保持默认的 <span class="ui">今天启用</span>，直接点最下方 <span class="ui">确认添加</span>。
+        <small>上方的<span class="ui">药品卡片</span>区域立刻出现一张<span class="chip g">绿色</span>卡片：当前剩余天数「剩余28天」，并列出「开封截止日期」与「实际停用日期」。</small>
+      </li>
+      <li>
+        展开页面下方的 <span class="ui">⏱ 模拟时间推移</span> 面板，依次点：<span class="ui">+20天</span> → <span class="ui">+1天</span> → <span class="ui">+7天</span>。
+        <small>三次点击后的卡片状态见下表。</small>
+      </li>
+      <li>
+        看完后点 <span class="ui">恢复今天</span>（或点顶部黄条上的「点此恢复今天」）即可回到真实日期。
+      </li>
+    </ol>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>操作</th><th>剩余天数</th><th>卡片颜色</th><th>你会看到</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>刚添加</td><td>28 天</td><td><span class="chip g">绿</span></td><td>「剩余28天」</td></tr>
+          <tr><td>点 +20天</td><td>8 天</td><td><span class="chip g">绿</span></td><td>「剩余8天」，仍在绿档（绿档判据是 &gt;7 天）</td></tr>
+          <tr><td>再点 +1天</td><td>7 天</td><td><span class="chip y">黄</span></td><td>「剩余7天」，卡片转黄——这一下正好压上 7 天黄线</td></tr>
+          <tr><td>再点 +7天</td><td>0 天</td><td><span class="chip r">红</span></td><td>卡片写「今天到期，请停止使用」；页面<strong>顶部弹出红色横幅</strong>「红霉素眼膏今天到期，请停止使用」</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <strong>为什么不是直接点 +30天？</strong>28 天的药一步 +30 会直接跳到「已过期2天」，中间的黄档就看不到了。这也是本版新增 <span class="ui">+20天</span> 档的原因：让 28 / 30 天这类最常见的开封期限能被<strong>分段跨越</strong>，逐档看到颜色变化。若想看「已过期」文案，在第 4 步之后再点一次 <span class="ui">+1天</span> 即可（卡片变为「已过期1天」）。
+    </div>
+
+    <div class="note">
+      <strong>另一条更快的看法：</strong>展开 <span class="ui">⏱ 模拟时间推移</span> 后，也可以直接在 <span class="ui">自定义日期</span> 里选一个日期再点 <span class="ui">应用日期</span>，一步跳到任意档位。<br>
+      <strong>怎么知道自己在不在模拟日期：</strong>只要快进过，页面最上方就会常驻一条黄色提示条「⏱ 当前处于模拟日期 YYYY-MM-DD（非真实日期），点此恢复今天」，点一下即可回到今天。<strong>刷新页面也会自动回到真实日期</strong>，所以不必担心把模拟状态留给下一个人。
+    </div>
+
+    <h3>路径 B · 拍照路径（需要网络）</h3>
+    <p>这条路径会把照片发给第三方 AI 服务做识别，请在有网络时体验；离线时应用会提示改用手动填写。</p>
+    <ol class="steps">
+      <li>点 <span class="ui">拍照识别</span> 页签，再点 <span class="ui">📷 拍照或选择图片</span>。
+        <small>提示语原文：「可上传1—4张，建议至少包含一张有效期特写」。一次最多取前 4 张。</small>
+      </li>
+      <li>选好图后进入「图片预览」，确认无误点 <span class="ui">开始识别</span>。
+        <small>识别中显示「正在识别产品……」，旁边有 <span class="ui">取消识别</span> 可随时中断。</small>
+      </li>
+      <li>识别完成后出现「识别结果」列表，逐条列出产品名称 / 产品类别 / 规格 / 印刷有效期 / 识别依据。
+        <small>若有效期没拍清楚，该条会就地给出一个日期输入框让你人工核对，或选择 <span class="ui">暂不填写</span>。</small>
+      </li>
+      <li>每条结果各带两个按钮：<span class="ui">确认并添加</span> 直接入库；<span class="ui">修改信息</span> 把该条内容灌进手动表单再改。
+        <small>结果区底部还有 <span class="ui">重新识别</span> 与 <span class="ui">切换为手动填写</span>。</small>
+      </li>
+    </ol>
+    <p>入库之后，颜色档与模拟时间推移的看法与路径 A 完全一致。</p>
+  </section>
+
+  <!-- ============================ 3. 功能详解 ============================ -->
+  <section class="card" id="privacy">
+    <h2>四、数据与隐私</h2>
+    <p class="sec-note">这一节按「哪些数据留在本机、哪些会离开本机」如实分开写。</p>
+
+    <h3>留在本机的</h3>
+    <ul>
+      <li><strong>全部药品记录</strong>（名称、使用人、规格、两个日期、备注等）只保存在<strong>你这台设备的这个浏览器</strong>里，没有账号，没有服务器数据库，不上传、不同步。清除浏览器数据、换浏览器或换设备后将无法找回。</li>
+      <li><strong>拍照识别保留的照片</strong>：识别完成后，会被压小并<strong>一并存进同一份本地记录</strong>。这份留存的副本不上传、不同步；但要分清——<strong>识别当时那张照片是上传过的</strong>（见下一节）。</li>
+      <li><strong>联网查询的结果缓存</strong>（药名 → 天数）也存在本地，保留 30 天。</li>
+      <li>模拟日期<strong>不写入本地存储</strong>，刷新页面即回到真实今天——避免把假日期留给下一个打开页面的人。</li>
+    </ul>
+
+    <h3>会离开本机的（务必知悉）</h3>
+    <div class="danger">
+      本作品有<strong>三类操作</strong>会让数据离开本机，其余一切都在本地完成：
+      <ul>
+        <li><strong>拍照识别</strong> → <strong>阿里云百炼（dashscope.aliyuncs.com）+ 智谱 AI（open.bigmodel.cn）</strong>：点「开始识别」后，你选中的<strong>照片本身会分别上传给这两家</strong>——第二家用于交叉核对第一家的结果（见 2.3）。若照片里拍到了药盒之外的东西（处方、姓名、家庭环境等），这些内容也会一并被上传给两家。</li>
+        <li><strong>联网查询开封效期</strong> → <strong>智谱 AI（open.bigmodel.cn）</strong>：点该按钮后，你填写的<strong>产品名称</strong>会被发送到该服务用于检索与提炼。</li>
+        <li><strong>提交药库反馈</strong> → <strong>本站服务器</strong>：点页脚「找不到你的产品？告诉我一声」并提交后，你填写的<strong>产品名称与补充说明</strong>会保存在本站服务器上，用于以后补充内置药库。这里不会给你单独回复，也请不要填写姓名、电话等个人信息。</li>
+      </ul>
+      三者都<strong>只在你主动点击相应按钮后才发生</strong>：不点拍照识别、不点联网查询、不提交反馈，就没有任何数据离开本机；仅用「手动填写 + 内置 1832 条药库 + 本地计时」时，应用完全离线可用。
+    </div>
+    <p>部署在服务器上的版本，请求由本站的服务端代理分别转发给上述两家，浏览器<strong>不携带任何密钥</strong>；代理只记录请求方法、路径、状态码、耗时与来源 IP，<strong>不记录照片内容与药名内容</strong>。</p>
+
+    <h3>由此带来的取舍</h3>
+    <ul>
+      <li><strong>清除浏览器数据 / 换浏览器 / 换设备 ⇒ 记录全部消失且无法找回</strong>，因为云端没有任何副本。重要记录请自行截图或另行记录。</li>
+      <li>无痕窗口关闭即清空。</li>
+      <li>本地存储写满时会提示「本地存储空间不足，请删除部分旧记录」——照片是主要占用来源。</li>
+    </ul>
+  </section>
+
+  <!-- ============================ 5. 常见问题 ============================ -->
+  <section class="card" id="faq">
+    <h2>五、常见问题</h2>
+
+    <details class="faq">
+      <summary>内置药库里没有我的药，怎么办？</summary>
+      <div>
+        <p>提示会写「🔍 内置药库未收录「XX」……」。三个办法：①点 <span class="ui">🔍 联网查询开封效期</span>；②直接在 <span class="ui">开封后可用天数</span> 里按说明书手填；③若说明书没写开封期限，就只填 <span class="ui">印刷有效期</span>，卡片会只跑第一个时钟。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>为什么提示说「有多个相近条目，未自动预填」？</summary>
+      <div>
+        <p>因为你输入的名字同时像药库里好几条、而它们的开封天数并不一致（例如「碘伏」在库里就分蘸取使用、罐装棉签、独立包装单支三种，分别是 7 天、7 天、1 天）。这种情况下应用<strong>拒绝替你猜</strong>，请补全到完整通用名（最好带剂型），或改用联网查询。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>我改了药名，开封天数怎么跟着变了？</summary>
+      <div>
+        <p>这是有意设计。凡是<strong>药库自动填进去的值</strong>，都会随药名改动清空重算，以免把上一个药的天数留在新药身上。<strong>你自己手动输入过的天数不会被改</strong>——此时字段下方小字显示「已手动修改」。看这行小字就能分辨当前值的来路。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>为什么点了 +30天，直接就「已过期」了？</summary>
+      <div>
+        <p>因为大部分常见药的开封期是 28 或 30 天，加 30 天必然跨过终点。要逐档看到绿 → 黄 → 红，请按第二节的顺序点 <span class="ui">+20天</span> → <span class="ui">+1天</span> → <span class="ui">+7天</span>，或用自定义日期精确落在某一档。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>顶部一直挂着红色横幅／黄色横条，是出错了吗？</summary>
+      <div>
+        <p>不是。黄色横条表示你还停在<strong>模拟日期</strong>，刷新页面就会自动回到真实今天；红色横幅表示当前日期下确实有药已到期。点黄条上的「点此恢复今天」或该面板里的 <span class="ui">恢复今天</span> 即可回到真实日期，红色横幅通常随之消失。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>没有网络还能用吗？</summary>
+      <div>
+        <p>能。手动填写 + 1832 条内置药库 + 全部计时与提醒功能都不依赖网络。只有<strong>拍照识别</strong>和<strong>联网查询</strong>需要联网；识别服务未配置时，拍照页会直接提示「未配置识别服务，可直接使用「手动填写」，内置药库离线可用」。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>拍照识别认错了怎么办？</summary>
+      <div>
+        <p>识别结果区每条都可就地改：有效期没拍清会给出日期输入框让你人工确认（也可以选 <span class="ui">暂不填写</span>），开封天数可直接改数字，或点 <span class="ui">修改信息</span> 把整条灌进手动表单再改。结果区底部写着「识别仅辅助录入，请确认包装信息后保存。」——请务必核对后再保存。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>「使用人」能让家人各自登录、各看各的吗？</summary>
+      <div>
+        <p>不能。使用人只是记录上的一个标签，用于卡片徽章和列表筛选。本作品<strong>没有账号、没有多人共享、没有云同步</strong>，所有记录只在本机浏览器内。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>换手机 / 清了浏览器缓存，记录还在吗？</summary>
+      <div>
+        <p>不在了，且无法恢复——记录只存在原设备的浏览器里，没有云端副本。这是「不需要注册、记录不上云」这一选择的代价。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary>为什么有的药显示「无需开封计时」？</summary>
+      <div>
+        <p>因为药库对这类药本来就不给开封天数（独立铝箔袋、单支独立包装、按外盒效期使用等）。这类记录只跑印刷有效期一个时钟，所以添加时需要填印刷有效期，否则无法保存。</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============================ 6. 免责声明 ============================ -->
+  <section class="card" id="disclaimer">
+    <h2>六、免责声明</h2>
+    <p class="quote">
+      开封后有效期为参考值，请以药品说明书为准。<br>
+      本应用不构成用药建议，不判断药品是否变质。
+    </p>
+    <ul>
+      <li>内置药库的天数为按公开资料与药典通则整理的<strong>保守参考值</strong>，同一药品不同厂家的说明书口径可能不同；一旦与说明书冲突，<strong>以说明书为准</strong>。</li>
+      <li>联网查询与拍照识别的结果由第三方 AI 生成，<strong>可能出错</strong>，仅作录入辅助，请核对包装与说明书后再保存。</li>
+      <li>本应用只按日期做算术，<strong>无法判断药品是否已经变质</strong>。即使卡片仍是绿色，出现变色、分层、异味、絮状物、结块等情况，请立即停止使用。</li>
+      <li>用药相关问题请咨询医师或药师。废弃药品请按当地规定处理。</li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    第二时钟 · 你的药，开封后还能用多久 · 出品人：inoichi
+  </footer>
+
+</main>
+</body>
+</html>

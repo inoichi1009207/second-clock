@@ -1,0 +1,933 @@
+[
+  {
+    "name": "氯雷他定颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋拆开后当次冲服完，不留存；整盒未拆按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "一日一次即可，加量不会更快止痒；与同名片剂、糖浆不可叠加服用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "氯雷他定口崩片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；破板受潮或变色即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "口崩片极易吸潮，从板中取出后应立即放于舌上含化，不要提前剥好放口袋",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "氯雷他定分散片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "分散片可用温水化开给儿童服，化开后立即服完，不可久置",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "氯雷他定伪麻黄碱缓释片",
+    "aliases": [
+      "百为坦"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "必须整片吞服不可掰断；含伪麻黄碱，高血压、冠心病、甲亢、前列腺肥大者慎用，睡前服易影响入睡",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "枸地氯雷他定片",
+    "aliases": [
+      "贝雪"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；破板受潮即弃",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "与地氯雷他定属同一成分体系，两者不可同日叠加服用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "地氯雷他定口服溶液",
+    "aliases": [],
+    "form": "口服液",
+    "open_days": 30,
+    "open_note": "多剂量瓶开封后避光密封30天内用完（口服溶液通用规则保守参考值）",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "务必用配套量具取量，家用汤匙误差可达一倍",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "地氯雷他定分散片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "分散片可水中分散后服，分散后立即服完；嗜睡较轻但个体差异大",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸西替利嗪胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完，受潮软化粘连即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "嗜睡较氯雷他定明显，建议睡前服，服后勿驾车或操作机器",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸西替利嗪口服溶液",
+    "aliases": [],
+    "form": "口服液",
+    "open_days": 30,
+    "open_note": "多剂量瓶开封后避光密封30天内用完（口服溶液通用规则保守参考值）",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "与同成分的片剂、滴剂不可叠加；肾功能不全者需遵医嘱减量",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸左西替利嗪胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "与西替利嗪为同一成分的左旋体，两者不可同时服用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸左西替利嗪口服滴剂",
+    "aliases": [],
+    "form": "滴剂",
+    "open_days": 28,
+    "open_note": "开封后避光密封28天内用完（滴剂通用规则保守参考值）；滴管勿触碰口唇",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "婴幼儿按体重滴数给药，滴数由医生核定，不可按成人减半估算",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸左西替利嗪分散片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "可温水分散后服用，分散后应立即服完；服后可能嗜睡",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "依巴斯汀口崩片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；口崩片吸潮后不可再用",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "取药时手指须干燥，直接放舌上含化，无需饮水",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "苯磺酸贝他斯汀片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "处方药，主要用于过敏性鼻炎与荨麻疹；肾功能不全者需减量",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸非索非那定片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用白水送服；与果汁同服会明显降低吸收，与含铝镁的抗酸药需间隔2小时",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "富马酸酮替芬片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "嗜睡明显，宜睡前服；起效慢，用于哮喘预防时需连服数周才见效",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸赛庚啶片（瓶装）",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装开封后180天内用完，且不超过原印刷效期；瓶内干燥剂勿丢弃",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "第一代抗组胺药，嗜睡与口干明显，并可增进食欲；青光眼、前列腺肥大者禁用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "曲尼司特胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "属过敏介质阻释剂，需长期规律服用才见效，不能当作急性发作时的救急药",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "孟鲁司特钠片",
+    "aliases": [
+      "顺尔宁片"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；开板后剩余片仍在板内可用至效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "处方药，成人每晚一次；如出现情绪、睡眠或行为异常应及时告知医生",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "孟鲁司特钠颗粒",
+    "aliases": [
+      "顺尔宁颗粒"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋拆开后当次服完，不留存；整盒未拆按外盒印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "可直接倒入口中，或拌入常温软食（如米糊、苹果泥）并在15分钟内服完，不可溶于饮料",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "扎鲁司特片",
+    "aliases": [
+      "安可来"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "需空腹服用，餐前1小时或餐后2小时；随餐服会大幅降低吸收",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "布地奈德粉吸入剂",
+    "aliases": [
+      "普米克都保"
+    ],
+    "form": "其他",
+    "open_days": 90,
+    "open_note": "拆开外包装启用后建议3个月内用完（参考值，以说明书标示为准）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "干粉装置严禁受潮，不可对着吸嘴呼气；含激素，每次吸完必须漱口",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "布地奈德吸入气雾剂",
+    "aliases": [],
+    "form": "气雾剂",
+    "open_days": null,
+    "open_note": "开封后一般可用至外包装标示有效期；30℃以下避光防冻保存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "属长期控制药不是急救药；用后漱口，配合储雾罐可减少口腔真菌感染",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "丙酸氟替卡松吸入气雾剂",
+    "aliases": [
+      "辅舒酮"
+    ],
+    "form": "气雾剂",
+    "open_days": null,
+    "open_note": "开封后一般可用至外包装标示有效期；30℃以下避光保存，勿受冻或火烤",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "含激素，每次吸完必须漱口吐掉；症状缓解也不可自行停药",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "富马酸福莫特罗粉吸入剂",
+    "aliases": [
+      "奥克斯都保"
+    ],
+    "form": "其他",
+    "open_days": 90,
+    "open_note": "启用后建议3个月内用完（参考值，以说明书标示为准）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "长效β2受体激动剂，不可作为哮喘单药长期使用，须与吸入激素联用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "倍氯米松福莫特罗吸入气雾剂",
+    "aliases": [
+      "启尔畅"
+    ],
+    "form": "气雾剂",
+    "open_days": null,
+    "open_note": "开封后按外包装标示效期使用；部分品规要求冷藏储存至发放后于室温再放置数月，具体以说明书为准",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含激素与长效支扩剂的复方，用后漱口；不可当急性发作救急药",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "噻托溴铵粉吸入剂",
+    "aliases": [
+      "思力华"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "吸入用胶囊为铝塑泡罩独立密封，按外盒印刷效期；取出后应立即使用，不可提前剥出存放",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "胶囊只可放入配套吸入器吸入，绝不可吞服；避免药粉进眼，青光眼者尤需注意",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "噻托溴铵吸入喷雾剂",
+    "aliases": [
+      "思力华能倍乐"
+    ],
+    "form": "喷雾剂",
+    "open_days": 90,
+    "open_note": "药筒装入吸入器后3个月内用完，到期即使仍有余量也应丢弃（说明书标示）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "首次使用需按说明书排空启动；喷雾勿对着眼睛，用后洗手",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "噻托溴铵奥达特罗吸入喷雾剂",
+    "aliases": [
+      "思合华"
+    ],
+    "form": "喷雾剂",
+    "open_days": 90,
+    "open_note": "药筒装入吸入器后3个月内用完，到期即弃（说明书标示）；请在标签上写下装入日期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "慢阻肺长期维持用药，每日一次固定时间；不可用于突发喘憋的急救",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "糠酸氟替卡松维兰特罗吸入粉雾剂",
+    "aliases": [
+      "全再乐"
+    ],
+    "form": "其他",
+    "open_days": 42,
+    "open_note": "揭开托盘后6周内用完，到期即弃；在装置标签上写下丢弃日期（说明书标示）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "每日一次，打开盖子即计一剂，不可反复开合试玩；含激素，用后漱口",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "乌美溴铵维兰特罗吸入粉雾剂",
+    "aliases": [
+      "欧乐欣"
+    ],
+    "form": "其他",
+    "open_days": 42,
+    "open_note": "揭开托盘后6周内用完，到期即弃（说明书标示）；装置内含干燥剂不可拆",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "慢阻肺维持用药，不含激素但同样不能救急；避免药粉进眼",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "糠酸氟替卡松乌美溴铵维兰特罗吸入粉雾剂",
+    "aliases": [],
+    "form": "其他",
+    "open_days": 42,
+    "open_note": "揭开托盘后6周内用完，到期即弃（同类干粉装置说明书标示的通用值）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "三联吸入剂，每日一次；含激素，用后必须漱口，勿与其他含激素吸入剂叠加",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "格隆溴铵福莫特罗吸入气雾剂",
+    "aliases": [],
+    "form": "气雾剂",
+    "open_days": null,
+    "open_note": "开封后按外包装标示效期使用；避免高温与阳光直射，勿受冻",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "药罐不得刺破或火烤；喷药不畅时先按说明书清洗吸嘴，不要自行拆装",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "布地格福吸入气雾剂",
+    "aliases": [],
+    "form": "气雾剂",
+    "open_days": null,
+    "open_note": "开封后按外包装标示效期使用；30℃以下保存，勿冷冻",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "布地奈德与两种支扩剂的三联气雾剂，含激素须漱口；每日固定次数使用，不可当急救药",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "硫酸特布他林雾化吸入用溶液",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单剂量安瓿，拆开后当次雾化用完，剩余药液丢弃；未拆按外盒印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "雾化后可能手抖心悸，属常见反应；症状不缓解或加重须立即就医",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "硫酸特布他林片",
+    "aliases": [
+      "博利康尼"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "可致手抖、心悸；甲亢、心律失常、糖尿病者慎用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "硫酸沙丁胺醇片",
+    "aliases": [
+      "舒喘灵"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完且不超过原效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "口服起效慢于吸入剂，急性喘憋应优先用吸入气雾剂；过量易致心悸手抖低血钾",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "氢溴酸右美沙芬片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "只镇咳不化痰，痰多者不宜单用；不可与含同成分的复方感冒药叠加，严禁超量服用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸氨溴索片",
+    "aliases": [
+      "沐舒坦"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "化痰药需多喝水才有效；不建议与强力镇咳药同服，以免痰液排不出",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸氨溴索颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋拆开后当次冲服完，不留存；整盒未拆按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "温水冲服，水温不宜过烫；服后适当拍背有助排痰",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸氨溴索糖浆",
+    "aliases": [],
+    "form": "糖浆",
+    "open_days": 30,
+    "open_note": "开封后30天内用完（糖浆剂通用规则保守参考值）；不可对瓶口直接饮用",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "含糖，糖尿病患儿家长需留意；与同成分口服液、片剂不可叠加",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸氨溴索缓释胶囊",
+    "aliases": [
+      "沐舒坦缓释胶囊"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "每日一次整粒吞服，不可打开胶囊或嚼碎，否则缓释结构失效",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "乙酰半胱氨酸颗粒",
+    "aliases": [
+      "富露施"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋拆开后当次冲服完，不留存；整盒未拆按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "有硫磺样气味属正常；勿用金属容器冲配，与抗生素需间隔约2小时",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "乙酰半胱氨酸泡腾片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "筒装开封后180天内用完，且不超过原印刷效期；每次取药后立即盖紧带干燥剂的瓶盖",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "须完全溶于水后服用，不可直接吞服；溶解后应尽快喝完",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "福多司坦片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "祛痰药，需连续服用数日见效；服药期间多饮水有助稀释痰液",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "羧甲司坦片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "消化性溃疡活动期患者慎用；出现皮疹或胃部不适应停药就医",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "羧甲司坦口服溶液",
+    "aliases": [],
+    "form": "口服液",
+    "open_days": 30,
+    "open_note": "多剂量瓶开封后避光密封30天内用完（口服溶液通用规则保守参考值）",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "儿童按体重用配套量具取量；不宜与强力镇咳药同服",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "厄多司坦胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；受潮软化粘连即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "严重肝功能不全者禁用；疗程一般不超过说明书规定天数，需遵医嘱",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸溴己新片",
+    "aliases": [
+      "必嗽平"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "胃溃疡患者慎用；化痰期间多饮水，痰变稀后需主动咳出",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "桉柠蒎肠溶软胶囊",
+    "aliases": [
+      "切诺"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；30℃以下密封保存，勿受热变形",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "餐前半小时用凉开水整粒送服，不可嚼碎，也不可用热水，否则肠溶衣提前溶解刺激胃",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "标准桃金娘油肠溶胶囊",
+    "aliases": [
+      "吉诺通"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避免高温存放以免胶囊软化",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "餐前半小时凉开水整粒吞服；用于鼻窦炎与支气管炎的黏液促排，需连服数日",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "枸橼酸喷托维林片",
+    "aliases": [
+      "咳必清"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "痰多者不宜单纯镇咳，以免痰液潴留；青光眼、前列腺肥大者慎用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "磷酸苯丙哌林片",
+    "aliases": [
+      "咳快好"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "必须整片吞服，嚼碎会引起口舌麻木；服后可能困倦，勿驾车",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "复方甲氧那明胶囊",
+    "aliases": [
+      "阿斯美"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "复方含茶碱与抗组胺成分，不可再与其他含茶碱或抗过敏的感冒药叠加；服后可能嗜睡",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "茶碱缓释片",
+    "aliases": [
+      "舒弗美"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "必须整片吞服；治疗窗窄，与红霉素、环丙沙星等合用易中毒，出现恶心心悸抽搐立即就医",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "多索茶碱片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "服药期间避免大量饮用咖啡浓茶；急性心肌梗死患者禁用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "氨茶碱片（瓶装）",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装开封后180天内用完，且不超过原印刷效期；瓶内干燥剂勿丢弃",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "宜餐后服以减轻胃刺激；剂量个体差异大，须遵医嘱，不可自行加量",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "二羟丙茶碱片",
+    "aliases": [
+      "喘定"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "胃肠刺激小于氨茶碱，但仍可致心悸失眠；甲亢与心律失常者慎用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸班布特罗片",
+    "aliases": [
+      "帮备"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "每晚睡前一次服用；肝肾功能不全者须减量，遵医嘱",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸丙卡特罗片",
+    "aliases": [
+      "美普清"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "常于睡前服以控制夜间与清晨喘息；可致手抖心悸，甲亢者慎用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸丙卡特罗口服溶液",
+    "aliases": [
+      "美普清口服液"
+    ],
+    "form": "口服液",
+    "open_days": 30,
+    "open_note": "多剂量瓶开封后避光密封30天内用完（口服溶液通用规则保守参考值）",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "儿童按体重取量，务必用配套量具；与同成分片剂不可叠加",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "丙酸倍氯米松鼻喷雾剂",
+    "aliases": [
+      "伯克纳"
+    ],
+    "form": "喷雾剂",
+    "open_days": 28,
+    "open_note": "鼻用制剂启用后最多使用4周（《中国药典》通用规则），瓶身写上启用日期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "喷头朝向鼻腔外侧，对着鼻中隔喷易致鼻出血；需连用数日起效",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "盐酸氮卓斯汀丙酸氟替卡松鼻喷雾剂",
+    "aliases": [],
+    "form": "喷雾剂",
+    "open_days": 28,
+    "open_note": "鼻用制剂启用后最多使用4周（《中国药典》通用规则），到期即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "抗组胺与激素的复方鼻喷，喷后可能有苦味属正常；喷时头略前倾勿仰头",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "鼻渊通窍颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋拆开后当次冲服完，不留存；整盒未拆按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药，用于急慢性鼻炎鼻窦炎；服药期间忌辛辣，症状超一周不缓解应就医",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "香菊胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；受潮软化粘连即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药，用于急慢性鼻窦炎与鼻炎；孕妇慎用，服药期间忌烟酒辛辣",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "千柏鼻炎片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药，用于风热型鼻炎；孕妇禁用，症状持续加重应就医查因",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "苍耳子鼻炎胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含苍耳子，不可自行超量或长期连服；服药期间如出现恶心乏力应停药就医",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "苏黄止咳胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；受潮软化粘连即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "常用于感染后咳嗽与咳嗽变异性哮喘，需按疗程服用；孕妇慎用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "连花清咳片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药，用于急性气管支气管炎痰热壅肺证；服药期间忌辛辣油腻",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "桂龙咳喘宁胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于外感风寒引起的咳喘；哮喘急性发作仍须用吸入急救药，中成药不能替代",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "养阴清肺丸",
+    "aliases": [],
+    "form": "丸剂",
+    "open_days": 30,
+    "open_note": "蜜丸开封后30天内用完；受潮变软或长霉即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于阴虚燥咳咽干；痰多湿盛者不宜，糖尿病患者注意蜜丸含糖",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "咳特灵胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板装按外盒印刷效期；瓶装开封后建议180天内用完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含马来酸氯苯那敏，服后明显嗜睡，勿驾车；不可再叠加其他抗过敏感冒药",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "茚达特罗格隆溴铵吸入粉雾剂",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "吸入用胶囊为铝塑泡罩独立密封，按外盒印刷效期；取出后应立即使用，不可提前剥出存放",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "胶囊只可放入配套吸入器吸入，绝不可吞服；慢阻肺维持用药，不用于急性喘憋",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "马来酸茚达特罗吸入粉雾剂",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "吸入用胶囊为铝塑泡罩独立密封，按外盒印刷效期；受潮的胶囊不可再用",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "每日一次，吸入后如听到胶囊仍在旋转可再吸一次以吸净；不可口服",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "杏苏止咳颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋拆开后当次冲服完，不留存；整盒未拆按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于风寒感冒咳嗽痰多；风热咳嗽不宜，服药期间忌生冷",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "橘红丸",
+    "aliases": [],
+    "form": "丸剂",
+    "open_days": 30,
+    "open_note": "蜜丸开封后30天内用完；单粒蜡壳未拆按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于痰热咳嗽痰多黏稠；糖尿病患者注意蜜丸含糖",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "二母宁嗽丸",
+    "aliases": [],
+    "form": "丸剂",
+    "open_days": 30,
+    "open_note": "蜜丸开封后30天内用完；受潮变软或长霉即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于燥热咳嗽痰黄难咳；脾胃虚寒者慎用",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "辛夷鼻炎丸",
+    "aliases": [],
+    "form": "丸剂",
+    "open_days": 30,
+    "open_note": "瓶装水丸开封后30天内用完（丸剂通用规则保守参考值）；受潮结块即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于慢性鼻炎鼻塞流涕；孕妇慎用，症状持续加重应就医查因",
+    "category": "呼吸与过敏"
+  },
+  {
+    "name": "宣肺止嗽合剂",
+    "aliases": [],
+    "form": "口服液",
+    "open_days": 30,
+    "open_note": "多剂量瓶开封后避光密封30天内用完（合剂通用规则保守参考值）；服前摇匀",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "合剂久置有少量沉淀属正常，摇不匀或有异味即弃；用于外感咳嗽",
+    "category": "呼吸与过敏"
+  }
+]

@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二时钟 · 开发过程报告</title>
+<meta name="description" content="第二时钟的开发过程报告：七条缺陷档案、三道防猜错设计，以及把交叉验证用在开发流程上的记录。">
+<style>*{box-sizing:border-box}html,body{margin:0;padding:0}</style>
+<style>
+  /* ── 设计口径 ─────────────────────────────────────────────────────────
+     取材自药品包装本身：白底、药盒上的喷码（点阵单色字）、以及应用自己用来
+     表达剩余天数的三档颜色。绿/黄/红在这里不是装饰，它们沿用产品里的语义：
+     绿=已处置、黄=判断有分歧、红=会静默给出错答案的缺陷。
+     中性色带一点绿偏，跟主色同源；不用纯灰。
+     字体分三个角色：正文无衬线、引文与标题衬线（中文用宋体系）、
+     元数据用等宽（模拟喷在药盒上的批号）。
+  ─────────────────────────────────────────────────────────────────── */
+  :root {
+    color-scheme: light;
+    --ground:      #f2f4f0;
+    --surface:     #ffffff;
+    --surface-2:   #f7f9f5;
+    --ink:         #14201a;
+    --ink-soft:    #55635b;
+    --ink-faint:   #8a968f;
+    --rule:        #dde4dd;
+    --rule-strong: #c3cec5;
+    --accent:      #1f6b4b;
+    --accent-soft: #e6f2eb;
+    --warn:        #965c00;
+    --warn-soft:   #fdf1d8;
+    --crit:        #b32d2d;
+    --crit-soft:   #fbe4e4;
+    --shadow:      0 1px 2px rgba(20,32,26,.05), 0 12px 32px rgba(20,32,26,.06);
+
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --serif: Georgia, "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", STSong, SimSun, serif;
+    --mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, "Noto Sans Mono CJK SC", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground:      #101613;
+      --surface:     #171f1a;
+      --surface-2:   #1d2721;
+      --ink:         #e6ece7;
+      --ink-soft:    #a3b0a8;
+      --ink-faint:   #74827a;
+      --rule:        #2a352e;
+      --rule-strong: #3b4941;
+      --accent:      #5cc596;
+      --accent-soft: #17322a;
+      --warn:        #e0a94a;
+      --warn-soft:   #33280f;
+      --crit:        #f08a8a;
+      --crit-soft:   #351a1a;
+      --shadow:      0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground:      #101613;
+    --surface:     #171f1a;
+    --surface-2:   #1d2721;
+    --ink:         #e6ece7;
+    --ink-soft:    #a3b0a8;
+    --ink-faint:   #74827a;
+    --rule:        #2a352e;
+    --rule-strong: #3b4941;
+    --accent:      #5cc596;
+    --accent-soft: #17322a;
+    --warn:        #e0a94a;
+    --warn-soft:   #33280f;
+    --crit:        #f08a8a;
+    --crit-soft:   #351a1a;
+    --shadow:      0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.78;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap {
+    width: calc(100% - 40px);
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 0 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ── 喷码条：模拟药盒上那行批号／效期 ─────────────────────────────── */
+  .stamp {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  header.cover {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 34px 34px 30px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  header.cover::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: var(--accent);
+  }
+  header.cover h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(30px, 5.2vw, 44px);
+    line-height: 1.18;
+    letter-spacing: -.01em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  header.cover .deck {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--ink-soft);
+    font-size: 16.5px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  section.block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 25px;
+    line-height: 1.3;
+    letter-spacing: -.005em;
+    text-wrap: balance;
+  }
+  h2 .num {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: var(--accent);
+    margin-right: 10px;
+    vertical-align: 3px;
+  }
+  h3 {
+    margin: 0;
+    font-size: 17.5px;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+  p { margin: 0; max-width: 68ch; }
+  p + p { margin-top: 12px; }
+  strong { font-weight: 700; }
+  em { font-style: normal; background: var(--accent-soft); padding: 0 3px; border-radius: 2px; }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ── 数据带 ─────────────────────────────────────────────────────── */
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .fig {
+    background: var(--surface);
+    padding: 16px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .fig b {
+    font-family: var(--mono);
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+  .fig span { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
+  .fig .delta { color: var(--accent); font-family: var(--mono); font-size: 11.5px; }
+
+  /* ── 缺陷卡：左侧色条编码严重度，沿用产品里绿/黄/红的语义 ─────────── */
+  .cases { display: flex; flex-direction: column; gap: 14px; }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--rule-strong);
+    border-radius: 4px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .case.crit { border-left-color: var(--crit); }
+  .case.warn { border-left-color: var(--warn); }
+  .case.ok   { border-left-color: var(--accent); }
+
+  .case-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 14px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .tag.crit { background: var(--crit-soft); color: var(--crit); }
+  .tag.warn { background: var(--warn-soft); color: var(--warn); }
+  .tag.ok   { background: var(--accent-soft); color: var(--accent); }
+
+  .case dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    align-items: baseline;
+  }
+  .case dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-top: 2px;
+  }
+  .case dd { margin: 0; font-size: 15px; }
+  @media (max-width: 560px) {
+    .case dl { grid-template-columns: 1fr; gap: 2px 0; }
+    .case dd { margin-bottom: 8px; }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 14px 18px;
+    background: var(--surface-2);
+    border-left: 2px solid var(--rule-strong);
+    border-radius: 0 3px 3px 0;
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  blockquote.pull {
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: transparent;
+    padding: 20px 0;
+    font-size: 19px;
+    text-align: left;
+    text-wrap: balance;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: .88em;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+  table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 14.5px; }
+  th, td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  th {
+    background: var(--surface-2);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 18px;
+  }
+  summary { cursor: pointer; font-weight: 700; font-size: 15.5px; }
+  details[open] summary { margin-bottom: 10px; }
+
+  footer.foot {
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 15.5px; }
+    header.cover { padding: 26px 22px 24px; }
+    .case { padding: 17px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+  <style>
+    .topnav {
+      max-width: 880px;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      padding: 18px 0 0;
+      display: flex;
+      gap: 18px;
+      font-size: 13.5px;
+      font-family: var(--sans);
+    }
+    .topnav a { color: var(--accent); text-decoration: none; font-weight: 700; }
+    .topnav a:hover, .topnav a:focus-visible { text-decoration: underline; }
+  </style>
+
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">← 回到应用</a>
+  <a href="manual.html">使用手册</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="cover">
+    <p class="stamp">开发过程报告 · 外滩大会 2026 AI Coding 黑客松</p>
+    <h1>第二时钟：一个不肯猜的药箱</h1>
+    <p class="deck">
+      药盒上印的有效期，前提是一直没拆封。开封之后重新起算的那个期限，没有任何地方显示它。
+      这份报告记的不是功能怎么做出来的，而是<strong>它在什么地方差点给出错的答案</strong>，以及那些答案是怎么被拦下来的。
+    </p>
+    <div class="cover-meta">
+      <span class="stamp">作品 2C.KLINIK.REN</span>
+      <span class="stamp">出品人 INOICHI</span>
+      <span class="stamp">构建于 CLAUDE CODE</span>
+      <span class="stamp">审计 CODEX CLI</span>
+    </div>
+  </header>
+
+  <section class="block">
+    <h2><span class="num">01</span>交付状态</h2>
+    <div class="figures">
+      <div class="fig"><b>1832</b><span>药品与家庭医疗用品条目</span><span class="delta">↑ 起点 703</span></div>
+      <div class="fig"><b>1744</b><span>条附带储存安全提示</span></div>
+      <div class="fig"><b>1684</b><span>商品名与俗名别名</span></div>
+      <div class="fig"><b>46/46</b><span>生产环境测试通过</span></div>
+      <div class="fig"><b>3</b><span>轮独立审计</span></div>
+      <div class="fig"><b>0</b><span>前端持有的密钥</span></div>
+    </div>
+    <p>
+      单文件网页，药库内联，断网可查。拍照识别走阿里云百炼 <code>qwen-vl-plus</code>，
+      交叉核对走智谱 <code>glm-4.6v</code>，联网兜底走智谱 <code>web_search</code>；
+      三条链路都经服务端反代，浏览器不持有任何密钥。
+      部署在已经跑着另一个生产站的同一台 nginx 上，域名分流，互不影响。
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">02</span>产品的核心主张：三道防猜错</h2>
+    <p>
+      这个作品真正花力气的地方不是查得快，是<strong>拿不准的时候不猜</strong>。
+      原因是一条不对称性：药名认错，用户一眼看得出来，药盒就在他手上；
+      日期认错，他看不出来——<em>而日期恰恰是他找工具替他记的那个东西</em>。
+      所以自动化的边界不能一刀切，得按「错了以后还能不能被发现」来分层。
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>防线</th><th>拦的是什么</th><th>拿不准时的行为</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>两家 AI 独立交叉验证</td>
+            <td>单个视觉模型的幻觉</td>
+            <td>药名归一化后不完全相同即判分歧，一个字都不代填</td>
+          </tr>
+          <tr>
+            <td>证据必须可被代码核对</td>
+            <td>模型编造的日期</td>
+            <td>包装语种与证据文字矛盾、或声称的年份不在证据原文里，丢弃该日期</td>
+          </tr>
+          <tr>
+            <td>同名多剂型请用户选</td>
+            <td>查表先到先得给出的错答案</td>
+            <td>不预填，就地列出剂型按钮，交回给能看见药盒的人</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <blockquote>
+      界面上的措辞停在「结果一致」而不是「已验证」。一致只降低了单个模型独有错误漏过的概率，
+      两家仍可能被同一处模糊的包装误导而一起读错——这句差别写进了产品文案，因为它是真的。
+    </blockquote>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">03</span>缺陷档案</h2>
+    <p>
+      下面七条按「会不会静默给出错答案」排序。红色的三条共同点是：
+      <strong>用户不会收到任何提示，而拿到的数字是别的药的。</strong>
+    </p>
+
+    <div class="cases">
+
+      <article class="case crit">
+        <div class="case-head">
+          <span class="tag crit">静默错答</span>
+          <h3>一个商品名可以是好几种药</h3>
+        </div>
+        <dl>
+          <dt>现象</dt>
+          <dd>建索引时写的是「这个键还没有就存进去」——先到先得。而「希刻劳」既是头孢克洛干混悬剂（冲配后冷藏、14 天内用完），也是头孢克洛胶囊（按印刷效期、常温）。用户拿到的是数组里排在前面的那条。</dd>
+          <dt>规模</dt>
+          <dd>全库 27 个商品名。「泰诺林」「可乐必妥」「兰美抒」「胃复安」都在里面。</dd>
+          <dt>修法</dt>
+          <dd>索引值改成收全部命中条目；命中多条时先比对它们的预填答案，一致才算等价，不一致就不预填，并就地升起一排剂型按钮。「剂型」平时是选填字段，只在这一刻变必填。</dd>
+        </dl>
+        <blockquote>
+          之所以做成让用户点剂型、而不是原先那句「请补全完整通用名」：剂型就印在药盒上，照抄一眼的事；
+          而完整通用名他要是知道，一开始就不会去打商品名了。
+        </blockquote>
+      </article>
+
+      <article class="case crit">
+        <div class="case-head">
+          <span class="tag crit">静默错答</span>
+          <h3>「诺和盈」和「诺和泰」不是同一个产品</h3>
+        </div>
+        <dl>
+          <dt>现象</dt>
+          <dd>降糖版司美格鲁肽的别名里挂着减重版的商品名。两者开封后可用天数分别是 <strong>42 天</strong>和 <strong>28 天</strong>。</dd>
+          <dt>同类</dt>
+          <dd>共九组。30R 胰岛素挂着「诺和灵50R」、口服补液盐 III 挂着 ORS I 与 II（三个不同配方）。另有三个过泛别名更麻烦：<code>活菌制剂</code>、<code>胰岛素瓶装</code>、<code>滴剂型活菌</code>——这种词会把用户输入的任意同类药抓到一张错卡上。</dd>
+          <dt>连带</dt>
+          <dd>修复时新建的「口服补液盐散(I/II)」又踩一次坑：搜索前的归一化会去掉括号与斜杠，<code>(I/II)</code> 归一化之后<strong>正好等于</strong> <code>III</code>，两条撞成同一个键。改名成「(I型或II型)」才躲开。</dd>
+        </dl>
+        <p>归一化是为了容错，但它同时也在制造碰撞，而碰撞落在哪两条身上，不跑一遍全库是想不出来的。</p>
+      </article>
+
+      <article class="case crit">
+        <div class="case-head">
+          <span class="tag crit">我自己造成的</span>
+          <h3>用正则批量改医疗数据，19 条里错了 12 条</h3>
+        </div>
+        <dl>
+          <dt>动机</dt>
+          <dd>一批「未开封需冷藏」的药，说明里其实写着开封后可以转室温，而界面只显示一个储存状态。于是写了条规则：凡 storage 是冷藏、且说明里出现「室温」或「常温」的，统一追加一句「开封启用后可转室温存放」。</dd>
+          <dt>结果</dt>
+          <dd>审计报回 7 条是反的，我自己核完是 <strong>12 条</strong>。阿莫西林干混悬剂的说明是「<strong>干粉常温</strong>保存；配制后<strong>冷藏</strong>」——正则匹配到「常温」二字，于是追加了一句意思正好相反的话，等于告诉用户冲好的抗生素混悬液可以放室温。另有五条是「未开封时允许短期室温外放」的宽限条款，被写成了「开封后可转室温」，主语也错了。</dd>
+          <dt>处置</dt>
+          <dd>全部撤回，逐条核实后只给确实成立的 7 条重新加；反向的那几条另写「未拆封的干粉按常温存放，加水冲配之后才需要冷藏——顺序别弄反」。</dd>
+        </dl>
+        <blockquote class="pull">
+          正则读得到字符，读不到那句话在讲哪个阶段。而这批数据里，「常温」出现在句子的前半段还是后半段，
+          决定的是完全相反的两件事。
+        </blockquote>
+        <p>
+          这是整个项目里最危险的一个错误，而它恰好印证了作品自己的主张：
+          <strong>批量生成的东西必须过一道独立的核对，包括我自己批量生成的东西。</strong>
+        </p>
+      </article>
+
+      <article class="case warn">
+        <div class="case-head">
+          <span class="tag warn">判断分歧</span>
+          <h3>「开封」指的是拆盒还是撕袋</h3>
+        </div>
+        <dl>
+          <dt>审计意见</dt>
+          <dd>单剂量小袋装的颗粒剂，说明写着「拆袋后当次冲服完」，而开封天数是空的（按印刷效期）。审计判为自相矛盾，建议改成 1 天。照做了。</dd>
+          <dt>为什么错</dt>
+          <dd>用户填的「开封日期」，填的是他<strong>拆盒</strong>那天。一盒二十袋，拆盒后剩下十九袋仍是独立密封的，好到印刷效期为止。标 1 天的话这张卡第二天就变红说过期，用户会扔掉一整盒好药。</dd>
+          <dt>结论</dt>
+          <dd>两个说法都对，只是主语不同：一个说的是盒，一个说的是袋。撤回改动，保留「按印刷效期」，把两件事在文案里拆开讲。顺着这条又发现剂型兜底规则里「颗粒剂」与「口服液」的默认值都写着 1 天——意味着任何一个没被收录的同类产品都会被填成「明天过期」，一并改掉。</dd>
+        </dl>
+        <blockquote class="pull">
+          审计指出的矛盾是真的，但它给的修法不一定对。「哪个数字对」的前提是「这个字段到底在描述谁」，
+          而后者不在代码里，得回到用户的动作上去问。
+        </blockquote>
+      </article>
+
+      <article class="case warn">
+        <div class="case-head">
+          <span class="tag warn">安全边界</span>
+          <h3>模型不只会错，还会替自己背书</h3>
+        </div>
+        <dl>
+          <dt>实测</dt>
+          <dd>对着一板没有外盒的胶囊，模型报出完全不相干的药名；对着一盒克罗地亚语包装，它把注册批准号旁边的日期当成有效期，还编出一段中文证据「有效期至」——那五个汉字不可能出现在那个盒面上。而这些情况下它都自称 <code>confidence=high</code>，3/3 稳定复现。</dd>
+          <dt>提示词加固</dt>
+          <dd>能减少，杜绝不了。写明反例之后仍会复发。</dd>
+          <dt>改法</dt>
+          <dd>不再跟模型讲道理，改成要它交出<strong>可被代码核对的东西</strong>：逐字证据原文 + 包装语种。代码检查证据语种是否与包装语种矛盾、它声称的年份是否真的出现在证据原文里；核不上就丢弃该日期。</dd>
+        </dl>
+      </article>
+
+      <article class="case warn">
+        <div class="case-head">
+          <span class="tag warn">守卫失效</span>
+          <h3>闸都在，多点一下就绕过去了</h3>
+        </div>
+        <dl>
+          <dt>之一</dt>
+          <dd>低置信度药名的拦截装在识别结果那一屏。用户点「修改信息」转到手动表单后，药名框失焦会<strong>再次无条件触发</strong>药库预填——换个入口就绕过去了。守卫下沉进预填函数本身才算数。</dd>
+          <dt>之二</dt>
+          <dd>置信度判断写的是 <code>confidence === "low"</code>。审计指出字段缺失或取值非法时会直接绕过——这是我当初怕误拦而刻意写松的，判断错了。改成归一化后再比。</dd>
+          <dt>之三</dt>
+          <dd>联网查询的结果在 <code>await</code> 返回后直接写回表单，而查询期间用户完全可以把药名改成别的。拍照那条路早有批次令牌，手动表单这条一直没有。</dd>
+        </dl>
+      </article>
+
+      <article class="case ok">
+        <div class="case-head">
+          <span class="tag ok">已处置</span>
+          <h3>数据存在，不等于功能生效</h3>
+        </div>
+        <dl>
+          <dt>现象</dt>
+          <dd>药库里有上千条储存与使用注意事项，但渲染条件写错，它们几乎从不显示。「84 消毒液不可与洁厕灵混用」这类提醒全都躺在数据里睡觉。</dd>
+          <dt>为什么它最坏</dt>
+          <dd>不是因为少了一个功能，是因为<strong>它让维护者以为这一面已经防住了</strong>。</dd>
+          <dt>修法</dt>
+          <dd>单独渲染，并且只在药名精确命中时出现——模糊命中的药名本身带着不确定性，不该用确定的口吻转述一条安全提醒。</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">04</span>把交叉验证用在开发过程上</h2>
+    <p>
+      产品里让两家模型互相核对，开发时也照同一条原则做：代码由 Claude Code 编写，
+      全程用 Codex CLI 作只读独立审计，只产审计文件、不改代码。<strong>写的和查的不能是同一个模型。</strong>
+      三轮审计各换一个视角——代码正确性、提交文案、以及最后一轮换成「评委兼第一次用的普通用户」去读界面上所有能看到的字。
+    </p>
+    <p>
+      审计确实拦下了自查发现不了的东西，上一节红色的那几条大半出自它。但同样重要的是
+      <strong>它说错的时候要顶回去</strong>——审计意见是断言，不是判决。这一轮我明确不采纳两条：
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>审计意见</th><th>处置</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>交叉验证冲突时应禁用提交入口</td>
+            <td>不采纳</td>
+            <td>冲突时本来就一个字段都不预填，用户自己核对完药盒再提交是正常流程。禁掉等于告诉他「你确认过也不许记」。</td>
+          </tr>
+          <tr>
+            <td>手册章节顺序应调整（把上手放到功能前面）</td>
+            <td>不采纳</td>
+            <td>它把「编号对不上」诊断成了「顺序错了」。真正错的只是子标题的数字，改成 2.1–2.8 即可；顺序是作者定过的。</td>
+          </tr>
+          <tr>
+            <td>把「不预填天数、不带出储存条件」改写成更强的「不预填任何字段」</td>
+            <td>不采纳</td>
+            <td>只核实过前者。照改等于把一句已验证的话换成一句没验证的话——而那正是审计自己反对的做法。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">05</span>当仪器坏掉的时候</h2>
+    <p>
+      药库扩充后有 270 个新别名从未经过任何外部核实，只过了生成者的记忆。
+      派了七个子代理去联网核，结果全部在第一次查询就撞上配额耗尽。
+    </p>
+    <p>
+      <strong>七个全部停批，交了空结果，没有一个凭印象判定。</strong>
+      这是对的：它们「知道」福善美是阿仑膦酸钠，但那是记忆不是核实，写进库里等于伪造核实结果——
+      而这批数据出问题的根源，恰恰就是「让模型凭印象判断」。
+    </p>
+    <p>
+      换了通道重跑：驱动浏览器搜索，把结果页正文取回来，<strong>在脚本里</strong>检查该通用名有没有出现。
+      判据仍然是机器可核的那一套，和日期证据同一个思路——没有任何一步交给模型下判断。
+      网页原文一个字都没进模型上下文，因此这一轮几乎不花 token。
+    </p>
+    <div class="figures">
+      <div class="fig"><b>145</b><span>药品商品名送核</span></div>
+      <div class="fig"><b>142</b><span>查到证据，保留</span></div>
+      <div class="fig"><b>2</b><span>始终无证据，删除</span></div>
+      <div class="fig"><b>125</b><span>器械俗称，判定无需送核</span></div>
+    </div>
+    <p>
+      那 125 个之所以不送核：它们是「额温枪」「验孕棒」「暖宝宝」这类口语俗称，
+      风险性质完全不同——不会把用户导向另一种药。
+      删掉的两个（<code>科索普</code>、<code>克龄蒙</code>）很可能是对的，只是复核时搜索引擎已经限流。
+      按既定判据照删，因为<strong>代价不对称</strong>：删错了用户改打通用名，留错了用户拿到另一种药的储存条件。
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">06</span>几条留得下来的</h2>
+    <blockquote class="pull">
+      被普遍不执行的条款，危害不在它没被执行，在于它让人以为那一面有防护。
+      数据也一样：写了却不显示的安全提示，比没写更糟。
+    </blockquote>
+    <p>
+      其余四条，按这一轮踩到的顺序：
+    </p>
+    <div class="cases">
+      <article class="case ok">
+        <h3>守卫要装进被调用的那个函数里，不是装在调用处</h3>
+        <p>装在调用处的闸，换个入口就绕过去了。这条在本项目里被验证了两次——一次是识别结果转手动表单，一次是我自己新加的剂型监听打开了一条旧路径。</p>
+      </article>
+      <article class="case ok">
+        <h3>fail-closed 的默认值要写死，不能靠「一般不会缺」</h3>
+        <p><code>confidence === "low"</code> 这种写法，在字段缺失或取值非法时会静默放行。当初为了避免误拦而写松，是把两种错误的代价估反了。</p>
+      </article>
+      <article class="case ok">
+        <h3>让用户回答他答得上来的那个问题</h3>
+        <p>「请补全完整通用名」他答不上来，「照药盒上的剂型点一个」他照抄就行。同一个消歧需求，问法决定了它是一道墙还是一个台阶。</p>
+      </article>
+      <article class="case ok">
+        <h3>一致不等于正确</h3>
+        <p>两个模型的作用主要是<strong>发现分歧</strong>。「两家独立编出同一个错答案的概率更低」这个推断需要错误相互独立，而它们并不独立——共同的误读会让两家一起错。这句话原本写进了手册，后来删掉了。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">07</span>边界</h2>
+    <details>
+      <summary>这个作品不做什么</summary>
+      <p>
+        不判断药品质量、疗效或是否变质，也不构成用药建议。它只按用户记录的日期提醒——
+        日期没到，不代表那盒药一定还能用；受潮、变色、有异味都该停用，跟日历无关。
+      </p>
+      <p>
+        所有开封期限均为参考值，依据《中国药典》2020 年版制剂通则、卫生行业标准与药师科普通用口径整理；
+        无法核到产品说明书原文的条目一律标注「参考值」，并提示以手中说明书为准。
+      </p>
+      <p>
+        记录只保存在本机浏览器，无需注册登录。仅在用户主动点击时才会联网：
+        拍照识别会把照片分别发送给阿里云百炼与智谱 AI，联网查询会把产品名称发送给智谱，
+        提交反馈会把产品名称与补充说明发送至本站服务器。不点就不会。
+      </p>
+    </details>
+    <details>
+      <summary>已知仍然存在的不确定性</summary>
+      <p>
+        器械类的 125 个俗称未经联网核实，判定依据是「风险性质不同」而非「已核实」。
+        新增条目中相当一部分的开封期限取自剂型通用值而非说明书原文，均已标注「参考值」。
+        混合包装（同一品种既有铝塑板又有瓶装）的条目按更保守的瓶装口径给值，说明里写明了两种情况——
+        这是一个字段表达两套规则时的折中，不是精确答案。
+      </p>
+    </details>
+  </section>
+
+  <footer class="foot">
+    <p class="stamp">2C.KLINIK.REN · 单文件网页 · 药库内联 · 断网可查</p>
+    <p class="stamp">本报告记录开发过程与已知缺陷，不构成任何医疗建议</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

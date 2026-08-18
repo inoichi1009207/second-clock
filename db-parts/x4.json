@@ -1,0 +1,1208 @@
+[
+  {
+    "name": "奥美拉唑碳酸氢钠胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；拆板后当次服用",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含碳酸氢钠，钠摄入需限制者（高血压、心衰）服用前问药师",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "注射用奥美拉唑钠",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支冻干粉，未溶按印刷效期；溶解稀释后应立即滴注，剩余不留存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "只在医疗机构使用，溶解后液体变黄或有沉淀一律弃用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "艾司奥美拉唑镁肠溶胶囊",
+    "aliases": [
+      "埃索美拉唑镁肠溶胶囊"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "胶囊内是肠溶微丸，可拆开拌入非碳酸的软食吞服，但微丸本身不能嚼碎",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "注射用艾司奥美拉唑钠",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支冻干粉，未溶按印刷效期；配好的输液应尽快用完，不隔夜",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "仅限医疗机构静脉使用，家庭不自行配置",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "艾普拉唑肠溶片",
+    "aliases": [
+      "壹丽安"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "肠溶片整片吞服，掰开或嚼碎会被胃酸破坏而失效",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "雷贝拉唑钠肠溶胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；拆板后当次服用",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "长期连服建议每3个月找医生评估一次是否还需要继续",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "泮托拉唑钠肠溶胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "早餐前半小时空腹整粒吞服效果最好",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "注射用泮托拉唑钠",
+    "aliases": [
+      "泮立苏"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支冻干粉，未溶按印刷效期；溶解后应立即使用，不暂存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "只在医疗机构使用，不与其他药同瓶混合滴注",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "兰索拉唑肠溶胶囊",
+    "aliases": [
+      "达克普隆"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避免高温高湿",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "与氯吡格雷等药物可能相互影响，正在服其他慢病药先问药师",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "注射用兰索拉唑",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支冻干粉，未溶按印刷效期；配好后应尽快滴注完，不隔夜",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "仅限医疗机构使用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "富马酸伏诺拉生片",
+    "aliases": [
+      "沃克"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；防潮存放",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "起效比传统质子泵抑制剂快，但仍须按医嘱疗程用，不当作临时止痛片",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "替戈拉生片",
+    "aliases": [
+      "泰欣赞"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "处方药，反流症状缓解后是否停药由医生决定",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "法莫替丁胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "肾功能不全者需减量，用前问医生",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "法莫替丁注射液",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支安瓿一次性使用，抽取后当次用完，剩余不留存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "只在医疗机构使用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "西咪替丁片",
+    "aliases": [
+      "泰胃美"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期（参考值）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "与多种药物有相互作用，长期服其他药者先问药师；不建议长期自行服用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "西咪替丁胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "男性长期大剂量服用可能出现乳房胀痛，出现即停药就医",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "雷尼替丁片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "该成分部分批号曾因杂质问题被召回，用前核对批号与有效期，过期一律弃用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "尼扎替丁胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "处方药，按医嘱疗程服用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复方氢氧化铝片",
+    "aliases": [
+      "胃舒平"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "嚼碎服效果更好；与其他药需间隔1~2小时，否则影响吸收",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "碳酸氢钠片",
+    "aliases": [
+      "小苏打片"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期；受潮变色即弃",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "只作短期缓解，反复烧心应查明原因；高血压与心衰者慎用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "铝镁加混悬液",
+    "aliases": [],
+    "form": "混悬液",
+    "open_days": null,
+    "open_note": "多为单剂量袋装，拆袋当次服完；瓶装者开封后约1个月内用完（参考值）",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "服前摇匀；含铝制剂不宜长期连服，肾功能不全者慎用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "瑞巴派特片",
+    "aliases": [
+      "膜固思达"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "属胃黏膜修复药，需连服一段时间才见效，不是即时止痛药",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "替普瑞酮胶囊",
+    "aliases": [
+      "施维舒"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避免高温",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "饭后30分钟内服吸收更好；空腹服吸收明显下降",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "吉法酯片",
+    "aliases": [
+      "惠加强-G"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "饭后服用；孕妇用前咨询医生",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "谷氨酰胺呱仑酸钠颗粒",
+    "aliases": [
+      "麦滋林"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用温水冲服，水温过高可能影响成分稳定",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "枸橼酸铋钾片",
+    "aliases": [
+      "丽珠得乐"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "服药期间大便变黑属正常现象；连续服用一般不超过8周",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复方铝酸铋片",
+    "aliases": [
+      "胃必治"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含铋，舌苔与大便发黑为正常；不宜长期连续服用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "胃苏颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药，用于气滞型胃脘胀痛；症状持续2周不缓解应就医",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "猴头菌提取物颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "辅助用药，不能替代抑酸或根除幽门螺杆菌的治疗",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "盐酸伊托必利片",
+    "aliases": [
+      "瑞复啉"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "餐前服用；出现手抖、动作僵硬等症状应停药就医",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "枸橼酸莫沙必利分散片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "餐前15~30分钟服；可用水分散后服下",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "马来酸曲美布汀片",
+    "aliases": [
+      "援生力维"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于肠易激等胃肠动力紊乱，双向调节；孕妇慎用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "甲氧氯普胺片",
+    "aliases": [
+      "胃复安",
+      "灭吐灵"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "连续服用一般不超过5天，儿童与老人易出现锥体外系反应，出现肌张力异常立即就医",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "甲氧氯普胺注射液",
+    "aliases": [
+      "胃复安"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支安瓿一次性使用，抽取后当次用完，剩余不留存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "只在医疗机构使用；不可自行反复注射",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "消旋山莨菪碱片",
+    "aliases": [
+      "654-2"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "青光眼、前列腺肥大、心动过速者禁用；服后口干、视物模糊属常见反应",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "颠茄片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "解痉用药，青光眼与前列腺肥大者禁用；服后勿驾车",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "匹维溴铵片",
+    "aliases": [
+      "得舒特"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "进餐时用足量水整片吞服，不可躺着服，以免刺激食管",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "奥替溴铵片",
+    "aliases": [
+      "斯巴敏"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "用于肠易激综合征腹痛，餐前服；青光眼者慎用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "酪酸梭菌活菌片",
+    "aliases": [
+      "米雅"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "耐热耐酸性较好，但仍建议与抗生素间隔2小时",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复合乳酸菌胶囊",
+    "aliases": [
+      "聚克"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；须冷处保存，勿反复取放至室温",
+    "storage": "冷藏",
+    "refrigerated": true,
+    "tip": "活菌需2~10℃保存，室温久置活性下降；勿用热水送服",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "嗜酸乳杆菌片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "咀嚼或吞服均可；与抗生素错开2小时",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "凝结芽孢杆菌活菌片",
+    "aliases": [
+      "爽舒宝"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避光干燥处存放",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "芽孢型益生菌耐胃酸，儿童可嚼服；仍建议与抗生素间隔2小时",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "双歧杆菌活菌散",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存；未拆袋按印刷效期",
+    "storage": "冷藏",
+    "refrigerated": true,
+    "tip": "须2~8℃避光冷藏，常温久放活菌大量死亡；用温水冲服",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "聚卡波非钙片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；防潮",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "属容积性通便药，须配足量水送服，饮水不足反而加重便秘",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复方聚乙二醇电解质散",
+    "aliases": [
+      "和爽",
+      "舒泰清"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋后须当次溶解服用；配好的溶液当日用完，不隔夜",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "肠镜准备用量大，须按医嘱分次饮完；肠梗阻可疑者禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "比沙可啶栓",
+    "aliases": [],
+    "form": "栓剂",
+    "open_days": null,
+    "open_note": "单粒铝箔独立密封，按外盒印刷效期；拆开后当次用完",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "刺激性泻药不宜长期使用；栓体变软可冷藏几分钟再用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "酚酞片",
+    "aliases": [
+      "果导片"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "已在多地按处方管理并限制使用，不建议长期或自行连续服用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "麻仁润肠丸",
+    "aliases": [],
+    "form": "丸剂",
+    "open_days": null,
+    "open_note": "蜡壳或单粒铝塑独立包装，按外盒印刷效期；拆开当次服完",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药缓泻，孕妇忌服；连服1周无改善应就医",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "麻仁软胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避免高温使胶囊粘连",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "软胶囊受热易变形漏油，夏天勿放车内",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "通便灵胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含番泻叶类刺激性成分，长期使用可致结肠黑变，仅短期应急",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "小麦纤维素颗粒",
+    "aliases": [
+      "非比麸"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完；未拆袋按印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "膳食纤维类通便，必须同时喝足水；吞咽困难者慎用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "甘油灌肠剂",
+    "aliases": [],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支一次性使用，开封后当次用完，剩余不留存",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "仅作偶发便秘应急，频繁使用会削弱自主排便反射",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "磷酸钠盐灌肠液",
+    "aliases": [
+      "辉力"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支一次性使用，开封后当次用完，剩余不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "肾功能不全、心衰、老年人慎用，可致电解质紊乱；不可短期内重复使用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "乳果糖散",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "起效常需1~2天，初期腹胀多可自行缓解；糖尿病患者用前问医生",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "盐酸洛哌丁胺片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "发热或便中带血的腹泻禁用；2岁以下儿童禁用；不可超量，过量有心脏风险",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "消旋卡多曲颗粒",
+    "aliases": [
+      "杜拉宝"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "儿童急性腹泻辅助用药，须与口服补液盐同用，不能替代补液",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "药用炭片",
+    "aliases": [
+      "活性炭片"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期；须密封防潮防串味",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "会吸附其他口服药，须与任何药物间隔至少2小时",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "鞣酸蛋白酵母散",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "细菌性痢疾等感染性腹泻不宜单用；与抗生素间隔服用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "口服补液盐Ⅲ",
+    "aliases": [
+      "补液盐三"
+    ],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋须按规定水量一次配好；配好的溶液24小时内用完，剩余弃去",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "必须按说明书用足量水稀释，浓度过高会加重脱水；不可只兑半袋",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "米曲菌胰酶片",
+    "aliases": [
+      "慷彼申"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；防潮防高温",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "随餐整片吞服，嚼碎会破坏肠溶层并刺激口腔",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复方阿嗪米特肠溶片",
+    "aliases": [
+      "泌特"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "肝功能障碍、胆道梗阻者禁用；饭后整片吞服",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "胰酶肠溶片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；受潮易失活",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "随餐服用，整片吞服；对猪源蛋白过敏者禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "干酵母片",
+    "aliases": [
+      "食母生"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期；须密封防潮",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "易吸潮结块，结块或有霉味即弃；与磺胺类药间隔服用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "乳酶生片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期；须密封干燥保存",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "含活性乳酸菌，不能用热水送服，也不与抗生素、吸附剂同服",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "多酶片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期；防潮防热",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "整片吞服，嚼碎会使胃蛋白酶层与肠溶层作用错位而降低效果",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "水飞蓟宾胶囊",
+    "aliases": [
+      "水林佳"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避光防潮",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "护肝辅助用药，须同时处理病因；用药期间定期复查肝功能",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "水飞蓟宾葡甲胺片",
+    "aliases": [
+      "益肝灵"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "不能替代抗病毒或戒酒等病因治疗",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "多烯磷脂酰胆碱胶囊",
+    "aliases": [
+      "易善复"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；高温易使软胶囊变形，须阴凉存放",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "随餐用足量水整粒吞服，不嚼碎；夏季勿放车内",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "多烯磷脂酰胆碱注射液",
+    "aliases": [
+      "易善复"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支安瓿一次性使用，抽取后当次滴注完，剩余不留存",
+    "storage": "冷藏",
+    "refrigerated": true,
+    "tip": "只可用不含电解质的葡萄糖溶液稀释，禁与生理盐水混合；仅医疗机构使用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "双环醇片",
+    "aliases": [
+      "百赛诺"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "降酶药，停药需逐步减量，骤停可能反跳；须遵医嘱",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "还原型谷胱甘肽片",
+    "aliases": [
+      "阿拓莫兰"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避光防潮",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "遇潮易变色，变色即弃",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "注射用还原型谷胱甘肽",
+    "aliases": [
+      "阿拓莫兰"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支冻干粉，未溶按印刷效期；溶解后应立即使用，不暂存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "仅限医疗机构使用；不与维生素B12等药同瓶混合",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复方甘草酸苷注射液",
+    "aliases": [
+      "美能"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支安瓿一次性使用，抽取后当次用完，剩余不留存",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "仅限医疗机构使用；用药期间监测血钾",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "异甘草酸镁注射液",
+    "aliases": [
+      "天晴甘美"
+    ],
+    "form": "其他",
+    "open_days": null,
+    "open_note": "单支安瓿一次性使用，稀释后应尽快滴注完，不隔夜",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "仅限医疗机构静脉使用；严重低钾血症、高血压未控者禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "甘草酸二铵肠溶胶囊",
+    "aliases": [
+      "天晴甘平"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "整粒吞服；可引起血压升高与低血钾，高血压者定期监测",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "熊去氧胆酸胶囊",
+    "aliases": [
+      "优思弗"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；避免高温潮湿",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "溶石疗程常需数月，须按医嘱定期复查超声；胆道完全梗阻者禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "熊去氧胆酸片",
+    "aliases": [
+      "滔罗特"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "与铝制剂、考来烯胺同服会降低吸收，须间隔2小时以上",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "腺苷蛋氨酸肠溶片",
+    "aliases": [
+      "思美泰"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；受潮易失效，须防潮",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "两餐之间整片吞服；片剂对湿气敏感，服用前才从板中取出",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "联苯双酯滴丸",
+    "aliases": [],
+    "form": "丸剂",
+    "open_days": null,
+    "open_note": "铝塑板或单剂量瓶独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "停药可能出现转氨酶反跳，须遵医嘱逐步减量",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "护肝片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "中成药辅助降酶，不能替代病因治疗；服用期间仍须复查肝功能",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "五酯胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "可影响他克莫司等药物血药浓度，移植后患者用前必须告知医生",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "茴三硫片",
+    "aliases": [
+      "胆维他"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "服后尿液可呈深黄色属正常；胆道完全梗阻者禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "复方角菜酸酯乳膏",
+    "aliases": [
+      "太宁乳膏"
+    ],
+    "form": "乳膏",
+    "open_days": 30,
+    "open_note": "软管开封后建议1个月内用完（参考值）；肛周用药易污染管口",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "每次用后擦净管口并盖紧；注入头一人一管，不与他人共用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "肛泰栓",
+    "aliases": [],
+    "form": "栓剂",
+    "open_days": null,
+    "open_note": "单粒铝箔独立密封，按外盒印刷效期；拆开后当次用完",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "孕妇慎用；便血持续应就医排查其他病因",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "肛泰软膏",
+    "aliases": [],
+    "form": "软膏",
+    "open_days": 30,
+    "open_note": "软管开封后建议1个月内用完（参考值）",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "外用不可内服；用后洗手，管口保持清洁",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "普济痔疮栓",
+    "aliases": [],
+    "form": "栓剂",
+    "open_days": null,
+    "open_note": "单粒铝箔独立密封，按外盒印刷效期；拆开后当次用完",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "中成药，孕妇禁用；连用1周症状不缓解应就医",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "化痔栓",
+    "aliases": [],
+    "form": "栓剂",
+    "open_days": null,
+    "open_note": "单粒铝箔独立密封，按外盒印刷效期；拆开后当次用完",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "30℃以上易软化，夏季存放在阴凉处",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "地奥司明片",
+    "aliases": [
+      "爱脉朗"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "口服静脉活性药，急性痔发作按疗程短期服用；孕期用前问医生",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "利福昔明片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "肠道不吸收的抗菌药，服后尿液可呈红色属正常；仍须遵医嘱疗程",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "诺氟沙星胶囊",
+    "aliases": [
+      "氟哌酸"
+    ],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "18岁以下、孕妇哺乳期禁用；与含钙镁铝的胃药或牛奶间隔2小时",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "呋喃唑酮片",
+    "aliases": [
+      "痢特灵"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期；须避光",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "服药期间及停药后数日严禁饮酒，也不吃含酪胺的奶酪腌制品",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "甲硝唑片",
+    "aliases": [
+      "灭滴灵"
+    ],
+    "form": "片剂",
+    "open_days": 180,
+    "open_note": "瓶装口服固体开封后按半年内用完，且不超过原印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "服药期间及停药后3天内禁酒，否则可能出现双硫仑样反应",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "替硝唑片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "同样须全程禁酒；孕早期禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "硝呋太尔片",
+    "aliases": [],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "处方药，须按医嘱足疗程服用，不自行停药",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "庆大霉素普鲁卡因维B12颗粒",
+    "aliases": [],
+    "form": "颗粒剂",
+    "open_days": null,
+    "open_note": "单剂量袋装，拆袋当次冲服完，不留存",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "含氨基糖苷类抗菌成分，不宜长期自行服用；对普鲁卡因过敏者禁用",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "美沙拉嗪肠溶片",
+    "aliases": [
+      "莎尔福",
+      "颇得斯安"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；防潮防高温",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "整片吞服不可掰碎；炎症性肠病维持治疗须长期规律用药，勿自行停",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "美沙拉嗪栓",
+    "aliases": [
+      "莎尔福"
+    ],
+    "form": "栓剂",
+    "open_days": null,
+    "open_note": "单粒铝箔独立密封，按外盒印刷效期；拆开后当次用完",
+    "storage": "阴凉",
+    "refrigerated": false,
+    "tip": "睡前排便后使用效果更好；30℃以上易软化，须阴凉存放",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "柳氮磺吡啶肠溶片",
+    "aliases": [
+      "维柳芬"
+    ],
+    "form": "片剂",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期；瓶装者开封后不超过原印刷效期",
+    "storage": "避光",
+    "refrigerated": false,
+    "tip": "服药期间多饮水；对磺胺过敏者禁用，用药中需定期查血常规",
+    "category": "消化与肝胆"
+  },
+  {
+    "name": "罗沙替丁醋酸酯胶囊",
+    "aliases": [],
+    "form": "胶囊",
+    "open_days": null,
+    "open_note": "铝塑板独立密封，按外盒印刷效期",
+    "storage": "常温",
+    "refrigerated": false,
+    "tip": "处方药，肾功能不全者须减量",
+    "category": "消化与肝胆"
+  }
+]

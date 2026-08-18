@@ -1,0 +1,25 @@
+边界/陷阱样本集 —— 素材出处与制作方式
+生成日期 2026-08-09
+
+【真实照片,取自 Wikimedia Commons(文件页可查授权)】
+01-foreign-doksiciklin.jpg   File:Doksiciklin 100 091208.jpg
+02-foreign-atarax.jpg        File:Atarax.JPG
+03-pill-organizer.jpg        File:Heptagonal objects A weekly medicine box 846A60E4-A96F-4D2C-B010-FDB950E1DA4A.jpg
+04-lookalike-tictac.jpg      File:Tic Tac Menthe Fraiche 100.jpg
+05-supplement-vitamin.jpg    File:B vitamin supplement tablets.jpg
+
+【合成/加工(基图同样来自 Commons,以 _base- 前缀保留)】
+06-blurry-glare.png    基图 _base-methylpred.jpg (File:Sandoz.Methylprednisolone.4mg.jpg)
+                       加工:blur 2.6px + 两处高光 + rotateY 31° + 暗角 + iQOO 水印
+07-mfg-plus-months.png 全合成中文药盒渲染;只印「生产日期 2025年03月15日」+「有效期 24 个月」,
+                       不印「有效期至」;另置干扰项:Xiaomi 水印 2026-08-09、批号 JN250315B、
+                       注册证号 Z-2019-0388、条形码
+08-multi-products.png  三张基图拼一帧:_base-etilaam.jpg (File:Etilaam 1mg Tablet by Intas
+                       Pharmaceuticals.JPG)、_base-zumenon.jpg (File:Zumenon (estradiol
+                       hemihydrate) tablets in Australia, with one unopened blister pack.jpg)、
+                       _base-propecia.jpg (File:Propecia box and tablet.jpg)
+
+【_base-*.jpg】只是 06/08 的原料,不是独立测试用例。
+
+【送模前的预处理】按 index.html 的 compressImage() 原样复刻:
+最长边缩到 1024,canvas.toDataURL("image/jpeg", 0.84)。

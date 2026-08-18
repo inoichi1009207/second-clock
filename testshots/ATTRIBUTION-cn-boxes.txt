@@ -1,0 +1,27 @@
+中文药盒识别实测样本 — 图片来源与许可(2026-08-09 取)
+全部来自 Wikimedia Commons,均为真实照片(非插画/渲染),自由许可,注明作者与协议如下。
+取图方式:https://commons.wikimedia.org/wiki/Special:FilePath/<文件名>?width=1100
+
+shot01-yunnanbaiyao.jpg
+  Commons: File:Yunnanbaiyao.JPG            许可: CC BY 3.0
+shot02-lianhua-blister.jpg
+  Commons: File:Lianhua Qingwen Capsules by Beijing Yiling (20221219230142).jpg
+  作者: N509FZ                              许可: CC BY-SA 4.0
+shot03-xinhuangpian.jpg
+  Commons: File:XINHUANG Tablet.jpg
+  作者: HualinXMN                           许可: CC BY-SA 4.0
+shot04-999-ganmaoling-keli.jpg
+  Commons: File:999 cold-relief granules (20221224162340).jpg
+  作者: N509FZ                              许可: CC BY-SA 4.0
+shot05-amoxicillin-box.jpg
+  Commons: File:20190311 阿莫西林胶囊.jpg    许可: CC BY-SA 4.0
+shot06-pienzehuang.jpg
+  Commons: File:Pien tze huang.jpg          许可: CC0
+shot07-smecta-sachet.jpg
+  Commons: File:舒腹達(Smecta).jpg           许可: CC BY-SA 4.0
+shot08-baihuayou.jpg
+  Commons: File:萬應白花油.jpg               许可: CC BY-SA(见 Commons 文件页)
+
+覆盖剂型:散剂玻璃瓶 / 铝塑板裸胶囊 / 片剂盒+铝塑板 / 颗粒剂袋 / 胶囊盒 /
+中成药小盒(锭剂) / 口服混悬粉剂袋 / 外用药油玻璃瓶。
+未覆盖(公开自由版权图源里找不到中文实拍):滴眼液、软膏/乳膏管、口服液玻璃瓶。

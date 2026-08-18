@@ -1,0 +1,141 @@
+# ============================================================================
+# 第二时钟 —— 智谱 API 反代的 systemd unit
+#
+# 安装位置：/etc/systemd/system/2c-proxy.service
+#
+#   sudo cp systemd-2c-proxy.service /etc/systemd/system/2c-proxy.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now 2c-proxy
+#
+# ---------------------------------------------------------------------------
+# 【密钥怎么进来】—— 本文件内**不写 key 值**，它要进 git，写进去等于泄漏。
+#
+# key 存放在一个只有 root 可读的环境文件里：
+#
+#   sudo install -d -m 750 -o root -g root /etc/2c-proxy
+#   sudo install -m 600 -o root -g root /dev/null /etc/2c-proxy/env
+#   sudo nano /etc/2c-proxy/env          # 用编辑器写，不用 echo，避免落进 shell history
+#
+# /etc/2c-proxy/env 的内容是两行（等号两侧无空格，值不加引号）：
+#
+#   ZHIPU_API_KEY=<智谱控制台的 API Key>
+#   BAILIAN_API_KEY=<阿里云百炼控制台的 API Key>
+#
+# 为什么是两把 key（2026-08-09）：两条链路分属两家上游 ——
+#   拍照识别  → 阿里云百炼 Qwen-VL（实测识别质量优于智谱，见 proxy.mjs 顶部对照表）
+#   联网查询  → 智谱 web_search（百炼无等价接口）
+# 想退回「识别也走智谱」：在本文件加一行 Environment=CHAT_UPSTREAM=zhipu 后
+# `systemctl daemon-reload && systemctl restart 2c-proxy` 即可，前端无需改动、无需重新部署。
+#
+# 权限自查：`sudo stat -c '%a %U:%G' /etc/2c-proxy/env` 必须是 `600 root:root`。
+# 该文件**永远不进仓库**，也不出现在任何 scp 命令行里。
+#
+# EnvironmentFile 的语义：文件不存在则启动失败（路径前不加 `-`，即 fail-closed）。
+# 这和 proxy.mjs 里"env 缺失即退出"是同一条防线的两道闸：宁可起不来，
+# 不可无鉴权裸跑。
+# ---------------------------------------------------------------------------
+
+[Unit]
+Description=Second Clock (2c.klinik.ren) Zhipu API proxy
+Documentation=file:///opt/2c-proxy/DEPLOY.md
+After=network-online.target
+Wants=network-online.target
+
+# 反复起崩时别把日志刷爆：5 分钟内超过 5 次就停下等人工介入。
+# 注意：systemd v229 起这两项归 [Unit]，写在 [Service] 会被当成未知键忽略。
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+
+# 专用无登录用户，与 www-data 隔开：它只需要跑一个进程，不需要碰站点目录
+User=2cproxy
+Group=2cproxy
+
+WorkingDirectory=/opt/2c-proxy
+ExecStart=/usr/bin/node /opt/2c-proxy/proxy.mjs
+
+# key 从这里进程内注入；文件缺失即启动失败（无前导 `-`）
+EnvironmentFile=/etc/2c-proxy/env
+
+# 非密钥类配置直接写这里，改了要 daemon-reload + restart
+Environment=HOST=127.0.0.1
+Environment=PORT=8791
+Environment=MAX_BODY_BYTES=12582912
+Environment=RATE_LIMIT=30
+# 全局配额（进程内，重启清零）：无鉴权公网接口靠它兜住"换 IP 无限刷"的烧钱路径。
+# 每 IP 30/min 只挡得住单机脚本；住宅代理池按小时论斤卖，全局桶才是花钱那一侧的闸。
+# 调整口径：小时闸决定"被刷时一小时最多亏多少"，日闸决定"没人看着的一夜最多亏多少"。
+# 注意这不是最后一道闸 —— 唯一不可绕的是智谱控制台的账户消费上限，务必去设。
+# 全局配额（2026-08-09 收紧）：作者是个人用户，智谱控制台不提供消费上限，
+# 唯一的额度护栏就是这里。按每次识别约 3400 token、且交叉验证会打两次算，
+# 原来的 2000 次/天 ≈ 680 万 token/天，预付的 1700 万三折包撑不到三天。
+# 评审期的真实用量按几十到一两百次估，400/天已远够用；被刷时也只烧约 140 万/天。
+Environment=GLOBAL_HOURLY_LIMIT=120
+Environment=GLOBAL_DAILY_LIMIT=400
+Environment=ALLOWED_ORIGINS=https://2c.klinik.ren
+Environment=NODE_ENV=production
+
+Restart=always
+RestartSec=3s
+
+# 日志进 journal；proxy.mjs 只打印 方法/路径/状态码/耗时/IP，不含请求体与 key
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=2c-proxy
+
+# ---- 沙箱加固：这个进程只需要"连出去 + 监听回环"，别的一律不给 ----------
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+
+# ---- 【2026-08-09 修：这一行少两个族会让服务"活着但恒 502"】-----------------
+# 原为 `RestrictAddressFamilies=AF_INET AF_INET6`，症状极具迷惑性：
+# 服务 active (running)、启动日志一切正常、端口也听着，但每次转发都解析不出
+# open.bigmodel.cn，接口恒 502 —— 极易被误判成"智谱挂了"或"Key 写错了"，
+# 然后花一晚上去查一个根本没坏的东西。
+# 机理：glibc 的 getaddrinfo 要用 **AF_NETLINK** socket 枚举本机网卡（决定
+# 返回 A 还是 AAAA、判断是否有可用 IPv6 路由）；NSS/nscd 与 systemd-resolved
+# 的本地查询走 **AF_UNIX**。这两族被挡掉后，配合 SystemCallErrorNumber=EPERM，
+# socket() 返回 EPERM 而不是崩溃 —— 于是没有任何报错，只有解析失败。
+# 结论：凡是需要做 DNS 的 systemd 服务，这两族都必须放行，不是可选加固项。
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+# ProtectSystem=strict 把整个文件系统挂只读。本服务只写一个文件：用户反馈台账。
+# 用 StateDirectory 而不是手写 ReadWritePaths —— systemd 会自动按本 unit 的 User/Group
+# 创建 /var/lib/2c-proxy 并授权，且只有这一个目录可写，其余仍是只读。
+StateDirectory=2c-proxy
+StateDirectoryMode=0750
+UMask=0077
+
+# ---- 资源上限 ---------------------------------------------------------------
+# 【2026-08-09 从 256M 提到 512M】口径必须和 proxy.mjs 的 MAX_BODY_BYTES 对齐：
+# 单个识别请求的请求体上限 12 MiB，且请求体与响应体都是**整份进内存**的 Buffer
+# （readBody 收全再转发、上游响应也 concat 成一块），单请求峰值约 2×12=24 MiB。
+# 256M 下约 10 个并发大图请求即触发 cgroup OOM kill —— 而 OOM kill 叠加
+# Restart=always + StartLimitBurst=5 就是"连崩五次进 failed 永久停服"。
+# 512M 给到约 20 并发的余量，配合 nginx 侧 limit_conn（每 IP 并发上限）把
+# 真实并发压在个位数，两头对齐才算数：**只调这里不加 limit_conn 仍会被打穿。**
+# 若将来把转发改成流式（不整份进内存），这里可以退回 256M。
+MemoryMax=512M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target

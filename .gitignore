@@ -1,0 +1,16 @@
+# ── 凭据面：永不入仓 ────────────────────────────────────────────────
+# 私人备忘,内含 API Key。RUNBOOK §三 已明写「不要读、不要打印、不要提交」。
+my.txt
+
+# pre-ultracode 时期的 index.html 快照。文件被标记为只读的冻结备份,
+# 且内含当时硬编码的调试 Key ⇒ 不入仓,留在本地。
+clipboard/index.pre-ultracode-backup.html
+
+# ── 本机环境 ────────────────────────────────────────────────────────
+.claude/settings.local.json
+node_modules/
+
+# ── 系统垃圾 ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
