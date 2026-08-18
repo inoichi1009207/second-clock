@@ -219,3 +219,18 @@ node deploy/build.mjs        # 产物写到 deploy/dist/
   逐张注明作者与协议:[`testshots/ATTRIBUTION-cn-boxes.txt`](testshots/ATTRIBUTION-cn-boxes.txt)、
   [`testshots/SOURCES.txt`](testshots/SOURCES.txt)。
 - 代码主要由 Claude Code 生成;需求定义、测试与最终取舍由作者(inoichi)负责。
+
+---
+
+## 许可
+
+本项目**自有代码**以 [AGPL-3.0](LICENSE) 授权。
+它与 GPL 的区别在第 13 条:把修改版**当作网络服务跑**(而不只是分发文件)
+同样触发开源义务——对一个本身就以网站形态提供的项目,这一条才是有实际约束力的那条。
+
+**不在本许可覆盖范围内**的两类东西:
+
+- **`testshots/` 下的药盒照片**来自 Wikimedia Commons,各自带 CC BY / CC BY-SA / CC0 许可,
+  以 [`ATTRIBUTION-cn-boxes.txt`](testshots/ATTRIBUTION-cn-boxes.txt) 与
+  [`SOURCES.txt`](testshots/SOURCES.txt) 中逐张注明的协议为准。
+- **药库数据**整理自公开药品说明书与《中国药典》2020 年版相关通则,属事实性汇编。
